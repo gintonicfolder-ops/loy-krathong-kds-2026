@@ -203,12 +203,16 @@ body[data-th=day] .lp{filter:brightness(1.35)}
 .card.mine{border-color:var(--gold)}
 .vote-btn[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none}
 .pcg{margin-bottom:22px}.pcg h4{font-size:13px;letter-spacing:.1em;color:var(--gold);font-weight:400;margin-bottom:12px}
+/* staff entry: small, unobtrusive link to /admin/ (sits under the top-right corner of the nav) */
+#staff{position:absolute;right:10px;top:calc(100% + 6px);display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:11px;letter-spacing:.06em;line-height:1;color:var(--moon);text-decoration:none;white-space:nowrap;padding:6px 11px;border-radius:99px;background:rgba(11,16,32,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(215,182,106,.22);opacity:.6;transition:opacity .5s,border-color .5s,color .5s}
+#staff svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:1.5;flex:none}
+#staff:hover,#staff:focus-visible{opacity:1;color:var(--cl);border-color:var(--gold)}
 </style>
 </head>
 <body>
 <div id="env"><div class="sk skn"></div><div class="sk sku"></div><div class="sk skd"></div><div id="mg"></div><div id="sg"></div><div id="mn"></div><div id="sn"></div><div class="cl c1"></div><div class="cl c2"></div><div class="cl c3"></div></div><canvas id="bg"></canvas>
 <button id="snd" aria-label="Sound"><i></i><span>เสียง</span></button>
-<nav id="nav"><span class="brand">Loy Krathong KDS 2026</span><div class="links" id="links"></div><button id="tm" aria-label="time">◐ <span>เวลา</span></button><button id="bur" aria-label="menu">☰</button></nav><div id="menu"></div>
+<nav id="nav"><span class="brand">Loy Krathong KDS 2026</span><div class="links" id="links"></div><button id="tm" aria-label="time">◐ <span>เวลา</span></button><button id="bur" aria-label="menu">☰</button><a id="staff" href="/admin/" rel="nofollow" aria-label="สำหรับทีมงาน (เข้าสู่ระบบทีมงาน)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg>สำหรับทีมงาน</a></nav><div id="menu"></div>
 <main>
 <section class="view" id="home">
  <div class="moon"></div>
