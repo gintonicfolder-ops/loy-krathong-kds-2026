@@ -292,7 +292,7 @@ function draw(t){
 (function loop(t){draw(t);if(!rm)requestAnimationFrame(loop)})(0);
 /* ---------- Supabase connection (public data only; every rule is enforced in the database) ---------- */
 // The Project URL is public. Paste the PUBLISHABLE key (sb_publishable_...) into `key`. NEVER put a secret / service_role key in this file.
-const VOTE_API={url:'https://vnunuryoqyhuendcvopm.supabase.co',key:''};
+const VOTE_API={url:'https://vnunuryoqyhuendcvopm.supabase.co',key:'sb_publishable_b1hWWFjCnv6syQS0rzt7LA_YFQ7kKRl'};
 const VOTE_READY=!!(VOTE_API.url&&VOTE_API.key);
 async function rpc(name,args){
  const r=await fetch(VOTE_API.url.replace(/\/+$/,'')+'/rest/v1/rpc/'+name,{method:'POST',headers:{apikey:VOTE_API.key,'Content-Type':'application/json'},body:JSON.stringify(args||{})});
