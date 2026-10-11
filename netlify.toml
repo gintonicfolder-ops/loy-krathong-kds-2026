@@ -1,3 +1,13 @@
 # Static site: no build step. index.html is at the repository root.
 [build]
   publish = "."
+
+# หน้าทีมงาน (/admin/): ไม่ให้ค้นหา/ฝังในเฟรม/แคช
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Cache-Control = "no-store"
