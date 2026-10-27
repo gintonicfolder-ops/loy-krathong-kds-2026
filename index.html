@@ -207,6 +207,55 @@ body[data-th=day] .lp{filter:brightness(1.35)}
 #staff{position:absolute;right:10px;top:calc(100% + 6px);display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:11px;letter-spacing:.06em;line-height:1;color:var(--moon);text-decoration:none;white-space:nowrap;padding:6px 11px;border-radius:99px;background:rgba(11,16,32,.45);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border:1px solid rgba(215,182,106,.22);opacity:.6;transition:opacity .5s,border-color .5s,color .5s}
 #staff svg{width:11px;height:11px;stroke:currentColor;fill:none;stroke-width:1.5;flex:none}
 #staff:hover,#staff:focus-visible{opacity:1;color:var(--cl);border-color:var(--gold)}
+/* contest page layout refresh (display only) */
+#contest .hero{margin-bottom:22px}#contest .hero .no{font-size:12px;opacity:.85}
+#contest .hero .tag{margin:12px 0 0;font-family:var(--serif);font-size:clamp(14px,3.6vw,19px);opacity:.8}
+.vsteps{list-style:none;padding:0;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:18px 0 0}
+.vsteps li{display:flex;align-items:center;gap:8px;font-size:13px;padding:6px 14px 6px 6px;border:1px solid rgba(215,182,106,.25);border-radius:99px;background:rgba(21,28,50,.55)}
+.vsteps b{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:linear-gradient(var(--cl),var(--gold));color:var(--bg);font-weight:500;font-size:12px}
+#contest .vbar{padding:20px;border-color:rgba(215,182,106,.3)}
+.vpill{display:inline-flex;align-items:center;gap:7px;font-size:12px;letter-spacing:.06em;padding:4px 12px;border-radius:99px;margin-bottom:12px;border:1px solid var(--gold);color:var(--cl);background:rgba(215,182,106,.12)}
+.vpill i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.vpill.off{border-color:rgba(232,169,169,.5);color:#e8a9a9;background:rgba(122,26,34,.3)}.vpill.off i{background:#e8a9a9;box-shadow:none}
+.vbar .row>div{min-width:0}.vbar .row .btn{flex:1 1 100%}.vbar input{font-size:16px;min-height:46px}
+.vbar .bar{height:8px;max-width:360px;margin:8px auto 14px}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tile{display:flex;flex-direction:column;gap:2px;padding:10px 6px;border-radius:12px;border:1px dashed rgba(217,210,195,.25);font-size:12px;line-height:1.4;color:rgba(217,210,195,.7)}
+.tile b{font-weight:400;font-size:13px;color:var(--moon)}.tile em{font-style:normal}
+.tile.on{border:1px solid var(--gold);background:rgba(215,182,106,.14);color:var(--cl)}.tile.on b{color:var(--cl)}
+#cats{gap:12px}
+#cats .card{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center;text-align:left;padding:16px;transition:.25s}
+#cats .card svg{grid-row:1/span 5;margin:0;width:44px;height:44px}#cats .card>*:not(svg){grid-column:2}
+#cats .card small{margin-bottom:2px}#cats .card h3{font-size:19px}#cats .card p{margin:2px 0 0;font-size:12.5px}
+#cats .card .more{color:var(--gold);opacity:1;margin-top:6px}#cats .card .vs{justify-self:start}
+#cats .card.on{background:linear-gradient(160deg,rgba(215,182,106,.16),rgba(11,16,32,.85));box-shadow:0 0 0 1px var(--gold),0 0 30px rgba(215,182,106,.18)}
+@media(min-width:720px){#cats{grid-template-columns:repeat(3,1fr)}#cats .card{grid-template-columns:1fr;text-align:center;padding:22px}#cats .card svg{grid-row:auto;margin:0 auto 10px;width:54px;height:54px}#cats .card>*:not(svg){grid-column:1}#cats .card .vs{justify-self:center}}
+#gt{margin:30px 0 16px;font-size:clamp(19px,5vw,26px);text-align:center;display:flex;align-items:center;justify-content:center;gap:14px}
+#gt:before,#gt:after{content:"";height:1px;flex:1;max-width:70px;background:linear-gradient(90deg,transparent,var(--gold))}#gt:after{transform:scaleX(-1)}
+#grid{gap:12px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:720px){#grid{grid-template-columns:repeat(3,1fr);gap:16px}}
+#grid .card{position:relative;display:flex;flex-direction:column;align-items:center;min-width:0;padding:12px;transition:.25s}
+#grid .card:active{transform:scale(.98)}#grid .port{width:100%;margin-bottom:10px;font-size:44px}
+#grid .card h3{font-size:clamp(15px,4vw,20px);line-height:1.3;overflow-wrap:anywhere}#grid .card p{font-size:12px}
+#grid .card .go{margin-top:auto;padding-top:10px;font-size:12px;color:var(--gold)}#grid .card .vs{margin-top:8px}
+#grid .card .vs.done{position:absolute;top:20px;right:20px;margin:0;background:rgba(11,16,32,.88);border-color:var(--gold);color:var(--cl)}
+#grid .card.mine{background:linear-gradient(160deg,rgba(215,182,106,.14),rgba(11,16,32,.85));box-shadow:0 0 0 1px var(--gold)}
+#pbody{width:min(440px,calc(100vw - 32px));max-height:calc(100svh - 32px);padding:0;display:flex;flex-direction:column;overflow:hidden}
+#pbody .x{top:10px;right:10px;width:36px;height:36px;border-radius:50%;background:rgba(11,16,32,.75);border:1px solid rgba(215,182,106,.3);z-index:2;font-size:20px;line-height:1;display:grid;place-items:center}
+#pbody .pd{display:grid;gap:12px;padding:16px 18px 8px;overflow-y:auto;overscroll-behavior:contain}
+#pbody .pd .port{aspect-ratio:4/5;max-height:44svh;width:100%;margin:0}#pbody .pd p{line-height:1.7;font-size:14px;overflow-wrap:anywhere}
+#pbody .soon{display:flex;gap:8px;flex-wrap:wrap}#pbody .soon .btn{flex:1;padding:8px 12px;font-size:12px}
+#pbody .pfoot{padding:12px 18px calc(14px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(215,182,106,.2);background:rgba(11,16,32,.55)}
+#pbody .vote-btn{width:100%;min-height:50px;font-size:16px}#pbody .vmsg{text-align:center;margin-top:8px}
+#pbody .vhint{font-size:12px;color:var(--gold);margin-bottom:8px;text-align:center}#pbody .vhint:empty{display:none}
+.vote-btn[data-st=login],.vote-btn[data-st=off],.vote-btn[data-st=busy]{background:rgba(217,210,195,.1);color:var(--moon);border:1px solid rgba(217,210,195,.25);opacity:.85}
+.vote-btn[data-st=confirm]{background:linear-gradient(#fff1c4,#e8b84a);box-shadow:0 0 0 2px var(--cl),0 0 30px rgba(244,223,165,.55)}
+.vote-btn[data-st=done]{background:rgba(215,182,106,.14);color:var(--cl);border:1px solid var(--gold);box-shadow:none;opacity:1}.vote-btn[data-st=done]:before{content:"✓ "}
+#cscore,#pc{padding:18px}.sr{margin-bottom:14px}.srh{display:flex;align-items:center;gap:10px}
+.rk{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:50%;font-size:12px;border:1px solid rgba(217,210,195,.25);color:rgba(217,210,195,.7)}
+.sr.lead .rk{background:linear-gradient(var(--cl),var(--gold));color:var(--bg);border:0}
+.nm{flex:1;min-width:0;overflow-wrap:anywhere;font-size:14px;line-height:1.4}.nm small{opacity:.6;font-size:12px}
+.you{font-style:normal;font-size:11px;color:var(--cl);border:1px solid var(--gold);border-radius:99px;padding:1px 8px;white-space:nowrap}.srh .no{flex:none;font-size:18px}
 </style>
 </head>
 <body>
@@ -232,10 +281,10 @@ body[data-th=day] .lp{filter:brightness(1.35)}
 
 
 <section class="view" id="contest"><div class="wrap">
- <div class="hero"><div class="no">KDS</div><h2>ROYAL CONTEST</h2><div class="no">Loy Krathong KDS 2026</div><p class="sub" style="margin-top:14px;font-family:var(--serif);font-size:20px">A Celebration of Grace, Character &amp; Expression</p></div>
+ <div class="hero"><div class="no">KDS</div><h2>ROYAL CONTEST</h2><div class="no">Loy Krathong KDS 2026</div><p class="sub tag">A Celebration of Grace, Character &amp; Expression</p><ol class="vsteps"><li><b>1</b>ยืนยันรหัสนักเรียน</li><li><b>2</b>เลือกเวที</li><li><b>3</b>กดโหวต</li></ol></div>
  <div class="panel vbar" id="vbar" aria-live="polite"></div>
  <div class="cats" id="cats"></div>
- <h3 id="gt" style="text-align:center;margin:36px 0 18px;font-size:26px"></h3>
+ <h3 id="gt"></h3>
  <div class="grid" id="grid"></div>
  <div class="panel" id="cscore" style="max-width:640px;margin-top:32px"></div>
 </div></section>
@@ -443,32 +492,33 @@ const tv=id=>(V.tally&&V.tally[id])||0,pad=n=>String(n).padStart(2,'0');
 function photoURL(p){return p.photo?VOTE_API.url.replace(/\/+$/,'')+'/storage/v1/object/public/contestant-photos/'+encodeURI(p.photo):''}
 function portIn(p){return p.photo?`<img src="${esc(photoURL(p))}" alt="${esc(p.name)}" style="width:100%;height:100%;object-fit:cover;display:block">`:esc((p.name||'?')[0]||'?')}
 function stageBadge(id){if(!V.me)return'';const m=V.mine[id];if(!m)return'<span class="vs">ยังไม่ได้โหวต</span>';const p=CON.find(x=>x.id===m);return`<span class="vs done">โหวตแล้ว${p?' · NO. '+pad(p.no):''}</span>`}
-function renderCats(){$('#cats').innerHTML=CATS.map(c=>`<button class="card" data-c="${c.id}"><svg viewBox="0 0 54 54">${c.icon}</svg><small>${c.en}</small><h3>${c.th}</h3><p>${c.d}</p><p style="color:var(--gold);margin-top:10px">ดูผู้เข้าประกวด →</p>${stageBadge(c.id)}</button>`).join('')}
+function renderCats(){$('#cats').innerHTML=CATS.map(c=>`<button class="card" data-c="${c.id}"><svg viewBox="0 0 54 54">${c.icon}</svg><small>${c.en}</small><h3>${c.th}</h3><p>${c.d}</p><p class="more">ดูผู้เข้าประกวด →</p>${stageBadge(c.id)}</button>`).join('')}
 function gallery(){
- document.querySelectorAll('#cats .card').forEach(b=>b.classList.toggle('on',b.dataset.c===selCat));
+ document.querySelectorAll('#cats .card').forEach(b=>{const on=b.dataset.c===selCat;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)});
  const c=CATS.find(x=>x.id===selCat);$('#gt').textContent=c.th+' · '+c.en;
- $('#grid').innerHTML=CON.filter(p=>p.cat===selCat).map(p=>{const mine=V.me&&V.mine[selCat]===p.id;return`<button class="card${mine?' mine':''}" data-p="${p.id}"><div class="port" style="overflow:hidden">${portIn(p)}</div><div class="no">NO. ${pad(p.no)}</div><h3>${esc(p.name)}</h3><p>${esc(p.cls)}</p>${mine?'<span class="vs done">โหวตแล้ว</span>':''}</button>`}).join('')||'<p class="sub" style="grid-column:1/-1">ยังไม่มีผู้เข้าประกวดในเวทีนี้</p>';cs()}
+ $('#grid').innerHTML=CON.filter(p=>p.cat===selCat).map(p=>{const mine=V.me&&V.mine[selCat]===p.id;return`<button class="card${mine?' mine':''}" data-p="${p.id}"><div class="port" style="overflow:hidden">${portIn(p)}</div><div class="no">NO. ${pad(p.no)}</div><h3>${esc(p.name)}</h3><p>${esc(p.cls)}</p>${mine?'<span class="vs done">✓ โหวตแล้ว</span>':!p.enabled?'<span class="vs">ปิดรับโหวต</span>':''}<span class="go">ดูรายละเอียด · โหวต</span></button>`}).join('')||'<p class="sub" style="grid-column:1/-1">ยังไม่มีผู้เข้าประกวดในเวทีนี้</p>';cs()}
 $('#cats').onclick=e=>{const b=e.target.closest('[data-c]');if(b){selCat=b.dataset.c;gallery();$('#gt').scrollIntoView({behavior:'smooth'})}};
 $('#grid').onclick=e=>{const b=e.target.closest('[data-p]');if(!b)return;const p=CON.find(x=>x.id==b.dataset.p);
- $('#pbody').innerHTML=`<button class="x" onclick="dP.close()">×</button><div style="display:grid;gap:14px;max-width:420px"><div class="port" style="aspect-ratio:3/2;overflow:hidden">${portIn(p)}</div><div class="no">NO. ${String(p.no).padStart(2,'0')} · ${CATS.find(c=>c.id===p.cat).en}</div><h3 style="font-size:30px">${esc(p.name)}${p.nick?` <small style="opacity:.7">(${esc(p.nick)})</small>`:''}</h3><p>${esc(p.cls)}</p>${p.bio?`<p>${esc(p.bio)}</p>`:''}${p.insp?`<p><span style="color:var(--gold)">Inspiration</span><br>${esc(p.insp)}</p>`:''}${p.extra?`<p>${esc(p.extra)}</p>`:''}<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn vote-btn" id="vbtn" type="button"></button><button class="btn ghost" disabled>Score — soon</button><button class="btn ghost" disabled>Support — soon</button></div><div id="vmsg" class="vmsg" role="status"></div></div>`;V.open=p;V.confirm=0;dP.showModal();voteBtn()};
-function voteBtn(){const b=$('#vbtn');if(!b||!V.open)return;const p=V.open,got=V.mine[p.cat];let t='โหวตให้หมายเลขนี้',off=false;
- if(!VOTE_READY){t='ยังไม่เปิดระบบโหวต';off=true}
- else if(!V.cfg){t=V.offline?'เชื่อมต่อระบบโหวตไม่ได้':'กำลังเชื่อมต่อ…';off=true}
- else if(!p.enabled){t='ผู้เข้าประกวดนี้ปิดรับโหวต';off=true}
- else if(V.me&&got){t=got===p.id?'คุณโหวตหมายเลขนี้แล้ว':'คุณโหวตเวทีนี้แล้ว';off=true}
- else if(!V.cfg.voting_open){t='ปิดรับโหวต';off=true}
- else if(!V.me){t='ยืนยันรหัสนักเรียนก่อนโหวต';off=true}
- else if(V.busy){t='กำลังบันทึก…';off=true}
- else if(V.confirm===p.id)t='ยืนยันโหวต (เปลี่ยนไม่ได้)';
- b.textContent=t;b.disabled=off}
+ $('#pbody').innerHTML=`<button class="x" onclick="dP.close()" aria-label="ปิด">×</button><div class="pd"><div class="port" style="overflow:hidden">${portIn(p)}</div><div class="no">NO. ${String(p.no).padStart(2,'0')} · ${CATS.find(c=>c.id===p.cat).en}</div><h3 style="font-size:30px">${esc(p.name)}${p.nick?` <small style="opacity:.7">(${esc(p.nick)})</small>`:''}</h3><p>${esc(p.cls)}</p>${p.bio?`<p>${esc(p.bio)}</p>`:''}${p.insp?`<p><span style="color:var(--gold)">Inspiration</span><br>${esc(p.insp)}</p>`:''}${p.extra?`<p>${esc(p.extra)}</p>`:''}<div class="soon"><button class="btn ghost" disabled>Score — soon</button><button class="btn ghost" disabled>Support — soon</button></div></div><div class="pfoot"><div class="vhint" id="vhint"></div><button class="btn vote-btn" id="vbtn" type="button"></button><div id="vmsg" class="vmsg" role="status"></div></div>`;V.open=p;V.confirm=0;dP.showModal();voteBtn()};
+function voteBtn(){const b=$('#vbtn');if(!b||!V.open)return;const p=V.open,got=V.mine[p.cat];let t='โหวตให้หมายเลขนี้',off=false,st='ready';
+ if(!VOTE_READY){t='ยังไม่เปิดระบบโหวต';off=true;st='off'}
+ else if(!V.cfg){t=V.offline?'เชื่อมต่อระบบโหวตไม่ได้':'กำลังเชื่อมต่อ…';off=true;st='off'}
+ else if(!p.enabled){t='ผู้เข้าประกวดนี้ปิดรับโหวต';off=true;st='off'}
+ else if(V.me&&got){t=got===p.id?'คุณโหวตหมายเลขนี้แล้ว':'คุณโหวตเวทีนี้แล้ว';off=true;st=got===p.id?'done':'off'}
+ else if(!V.cfg.voting_open){t='ปิดรับโหวต';off=true;st='off'}
+ else if(!V.me){t='ยืนยันรหัสนักเรียนก่อนโหวต';off=true;st='login'}
+ else if(V.busy){t='กำลังบันทึก…';off=true;st='busy'}
+ else if(V.confirm===p.id){t='ยืนยันโหวต (เปลี่ยนไม่ได้)';st='confirm'}
+ b.textContent=t;b.disabled=off;b.dataset.st=st;const h=$('#vhint');if(h)h.textContent=st==='login'?'ปิดหน้าต่างนี้ แล้วยืนยันรหัสนักเรียนที่ด้านบนของหน้าเวทีก่อน จึงจะโหวตได้':''}
 function setVmsg(t,ok){const m=$('#vmsg');if(m){m.textContent=t;m.className='vmsg'+(ok?' ok':'')}}
+const pill=()=>{const c=V.cfg&&!V.cfg.voting_open;return`<span class="vpill${c?' off':''}"><i></i>${c?'ปิดรับโหวต':'เปิดรับโหวต'}</span>`};
 function vbar(){const el=$('#vbar');
  if(!VOTE_READY){el.innerHTML='<div class="who"><b>ระบบโหวตยังไม่เปิดใช้งาน</b></div><small class="note">ยังไม่ได้เชื่อมต่อฐานข้อมูลโหวตของงาน จึงดูผู้เข้าประกวดได้อย่างเดียว</small>';return}
  if(!V.cfg){el.innerHTML=`<div class="who"><b>${V.offline?'เชื่อมต่อระบบโหวตไม่ได้':'กำลังเชื่อมต่อระบบโหวต…'}</b></div>`+(V.offline?'<button class="btn ghost" id="vretry" type="button">ลองอีกครั้ง</button>':'');return}
  const closed=!V.cfg.voting_open;
  if(V.me){const n=Object.keys(V.mine).length;
-  el.innerHTML=`<div class="who">รหัสนักเรียน <b>${esc(V.me.code)}</b> · โหวตแล้ว ${n}/3 เวที</div><div class="chips" style="justify-content:center">${CATS.map(c=>`<span class="chip${V.mine[c.id]?' on':''}">${c.th} ${V.mine[c.id]?'✓':'—'}</span>`).join('')}</div>${closed?'<small class="note">ขณะนี้ปิดรับโหวต ยังดูคะแนนได้ด้านล่าง</small>':n===3?'<small class="note">คุณโหวตครบทั้ง 3 เวทีแล้ว ไม่สามารถโหวตเพิ่มได้ แต่ยังดูคะแนนได้ด้านล่าง</small>':''}<div style="margin-top:12px"><button class="btn ghost" id="vout" type="button" style="padding:8px 22px">ออกจากระบบ</button></div>`;return}
- el.innerHTML=`<div class="who"><b>โหวต ROYAL CONTEST</b><br><span style="opacity:.75;font-size:13px">ใช้รหัสนักเรียน 1 รหัส โหวตได้ครบทั้ง 3 เวที เวทีละ 1 คน</span></div><div class="row"><div><label for="vcode">รหัสนักเรียน</label><input id="vcode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="32" placeholder="รหัสนักเรียนของคุณ" value="${esc(V.draft.code)}"></div>${V.cfg.require_pin?`<div><label for="vpin">รหัสผ่าน</label><input id="vpin" type="password" autocomplete="off" maxlength="64" value="${esc(V.draft.pin)}"></div>`:''}<button class="btn" id="vgo" type="button"${V.busy?' disabled':''}>${V.busy?'กำลังตรวจสอบ…':'ยืนยันสิทธิ์'}</button></div>${closed?'<small class="note">ขณะนี้ปิดรับโหวต ยังดูคะแนนได้ด้านล่าง</small>':''}<div class="msg" id="vbm">${esc(V.barMsg)}</div>`}
+  el.innerHTML=`${pill()}<div class="who">รหัสนักเรียน <b>${esc(V.me.code)}</b> · โหวตแล้ว ${n}/3 เวที</div><div class="bar"><i style="width:${n/3*100}%"></i></div><div class="tiles">${CATS.map(c=>`<span class="tile${V.mine[c.id]?' on':''}"><b>${c.th}</b><em>${V.mine[c.id]?'✓ โหวตแล้ว':'ยังไม่ได้โหวต'}</em></span>`).join('')}</div>${closed?'<small class="note">ขณะนี้ปิดรับโหวต ยังดูคะแนนได้ด้านล่าง</small>':n===3?'<small class="note">คุณโหวตครบทั้ง 3 เวทีแล้ว ไม่สามารถโหวตเพิ่มได้ แต่ยังดูคะแนนได้ด้านล่าง</small>':''}<div style="margin-top:12px"><button class="btn ghost" id="vout" type="button" style="padding:8px 22px">ออกจากระบบ</button></div>`;return}
+ el.innerHTML=`${pill()}<div class="who"><b>โหวต ROYAL CONTEST</b><br><span style="opacity:.75;font-size:13px">ใช้รหัสนักเรียน 1 รหัส โหวตได้ครบทั้ง 3 เวที เวทีละ 1 คน</span></div><div class="row"><div><label for="vcode">รหัสนักเรียน</label><input id="vcode" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="32" placeholder="รหัสนักเรียนของคุณ" value="${esc(V.draft.code)}"></div>${V.cfg.require_pin?`<div><label for="vpin">รหัสผ่าน</label><input id="vpin" type="password" autocomplete="off" maxlength="64" value="${esc(V.draft.pin)}"></div>`:''}<button class="btn" id="vgo" type="button"${V.busy?' disabled':''}>${V.busy?'กำลังตรวจสอบ…':'ยืนยันสิทธิ์'}</button></div>${closed?'<small class="note">ขณะนี้ปิดรับโหวต ยังดูคะแนนได้ด้านล่าง</small>':''}<div class="msg" id="vbm">${esc(V.barMsg)}</div>`}
 let _sig='';
 function paint(force){const s=JSON.stringify([VOTE_READY,V.cfg,V.me&&V.me.code,V.mine,V.busy,V.barMsg,V.offline&&!V.cfg,CON]);
  if(force||s!==_sig){_sig=s;vbar();renderCats();gallery()}
@@ -523,7 +573,7 @@ function renderWins(){const el=$('#wins');let h='';
  if(h!==_ws){_ws=h;el.innerHTML=h}}
 $('#reveal').onclick=()=>{revealed=1;document.querySelectorAll('.win').forEach((w,i)=>setTimeout(()=>w.classList.add('show'),i*2200))};
 function scoreGroup(id){const c=CATS.find(x=>x.id===id),R=CON.filter(p=>p.cat===id).sort((a,b)=>tv(b.id)-tv(a.id)||a.no-b.no),top=Math.max(1,...R.map(p=>tv(p.id))),tot=R.reduce((a,p)=>a+tv(p.id),0);
- return`<div class="pcg"><h4>${c.th} · ${tot} โหวต</h4>`+R.map(p=>`<div style="margin-bottom:14px"><div style="display:flex;justify-content:space-between"><span>NO. ${pad(p.no)} ${esc(p.name)} <small style="opacity:.6">${esc(p.cls)}</small></span><span class="no">${tv(p.id)}</span></div><div class="bar"><i style="width:${tv(p.id)/top*100}%"></i></div></div>`).join('')+'</div>'}
+ return`<div class="pcg"><h4>${c.th} · ${tot} โหวต</h4>`+R.map(p=>{const v=tv(p.id),rk=1+R.filter(q=>tv(q.id)>v).length,mine=V.me&&V.mine[id]===p.id;return`<div class="sr${tot&&rk===1?' lead':''}"><div class="srh"><span class="rk">${tot?rk:'–'}</span><span class="nm">NO. ${pad(p.no)} ${esc(p.name)} <small>${esc(p.cls)}</small>${mine?' <em class="you">✓ โหวตของคุณ</em>':''}</span><span class="no">${v}</span></div><div class="bar"><i style="width:${v/top*100}%"></i></div></div>`}).join('')+'</div>'}
 function scoreNote(){if(!VOTE_READY)return'ยังไม่ได้เชื่อมต่อระบบโหวต จึงยังไม่มีคะแนนให้แสดง';if(!V.tally)return V.offline?'โหลดคะแนนไม่สำเร็จ กำลังลองใหม่อัตโนมัติ':'กำลังโหลดคะแนน…';return''}
 const scoreFoot=()=>`<small style="opacity:.55">คะแนนจากฐานข้อมูลกลาง · อัปเดตอัตโนมัติ${V.offline?' · ตอนนี้โหลดข้อมูลล่าสุดไม่ได้':''}</small>`;
 function pc(){const n=scoreNote();$('#pc').innerHTML=n?`<small style="opacity:.7">${n}</small>`:CATS.map(c=>scoreGroup(c.id)).join('')+scoreFoot()}
