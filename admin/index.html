@@ -336,11 +336,30 @@ async function enter(){
   if(ok!==true){await signOut();show('vDenied');return}      // ล็อกอินแล้วแต่ไม่ใช่แอดมิน: ไม่โหลดข้อมูลใด ๆ
   show('vApp');tab('K');loadStrip();loadK(true)}
 
-/* ---------- แถบสถานะโหวต (อ่านอย่างเดียว — หน้านี้ไม่มีปุ่มเปิด/ปิดโหวต) ---------- */
+/* ---------- แถบสถานะโหวต + สวิตช์เปิด/ปิดโหวต ----------
+   อ่านสถานะจาก get_contest_config (ฐานข้อมูล) · สั่งเปิด/ปิดผ่าน admin_set_voting_open (ตรวจ is_contest_admin ในฐานข้อมูล)
+   ตัวบังคับจริงคือ cast_vote เดิม ซึ่งตรวจ contest_settings.voting_open ทุกครั้งที่มีการโหวต · สวิตช์เดียวใช้กับทั้ง 3 เวที */
+let VO=null;
 async function loadStrip(){
-  try{const c=await rpc('get_contest_config',{});const o=c&&c.voting_open===true;
-    $('#vstrip').innerHTML=`<span>ระบบโหวต: <b>${o?'เปิดรับโหวต':'ปิดรับโหวต'}</b></span><span>ใช้ PIN: <b>${c&&c.require_pin?'ใช่':'ไม่'}</b></span><span style="opacity:.65">(เปิด/ปิดโหวตทำใน Supabase SQL Editor เท่านั้น)</span>`}
-  catch(e){$('#vstrip').innerHTML=''}}
+  try{const c=await rpc('get_contest_config',{});VO=!!c&&c.voting_open===true;
+    $('#vstrip').innerHTML=`<span>ระบบโหวต: <b>${VO?'เปิดรับโหวต':'ปิดรับโหวต'}</b></span><span>ใช้ PIN: <b>${c&&c.require_pin?'ใช่':'ไม่'}</b></span><button class="mini" id="vtog" type="button">${VO?'ปิดรับโหวต':'เปิดรับโหวต'}</button>`}
+  catch(e){VO=null;$('#vstrip').innerHTML=''}}
+$('#vstrip').addEventListener('click',async e=>{
+  const b=e.target.closest('#vtog');if(!b||VO===null)return;const want=!VO;
+  const yes=await ask(want?'เปิดรับโหวต?':'ปิดรับโหวต?',
+    want?'<p>นักเรียนที่ยืนยันรหัสแล้วจะโหวตได้ทันที (หนึ่งรหัสต่อหนึ่งเวที) สวิตช์นี้ใช้กับ <b>ทั้ง 3 เวที</b></p>'
+        :'<p>ทุกเวทีจะ<b>หยุดรับโหวตทันที</b> คะแนนที่โหวตไปแล้วยังอยู่ครบ และเปิดใหม่ได้ภายหลัง</p>',
+    want?'เปิดรับโหวต':'ปิดรับโหวต');
+  if(!yes)return;b.disabled=true;
+  try{
+    const j=await adm('admin_set_voting_open',{p_open:want});
+    if(!(j&&j.ok)){toast(j&&j.error==='not_found'?'ไม่พบแถวตั้งค่าโหวตในฐานข้อมูล':'สั่งไม่สำเร็จ')}
+    await loadStrip();                                   /* อ่านสถานะจริงจากฐานข้อมูลกลับมาแสดง ไม่เชื่อค่าที่คาดไว้ */
+    if(j&&j.ok)toast(VO===want?(want?'เปิดรับโหวตแล้ว':'ปิดรับโหวตแล้ว'):'สถานะในฐานข้อมูลไม่ตรงกับที่สั่ง กรุณารีเฟรชหน้า')}
+  catch(err){
+    if(err&&(err.status===404||/PGRST202|Could not find/i.test(err.message||'')))toast('ยังไม่ได้ติดตั้งฟังก์ชันสวิตช์ในฐานข้อมูล (รัน royal_contest_voting_switch.sql ก่อน)');
+    else onFail(err)}
+  finally{b.disabled=false}});
 
 /* ---------- tabs ---------- */
 function tab(k){['K','S','C'].forEach(x=>{$('#tab'+x).setAttribute('aria-selected',x===k);$('#p'+x).hidden=x!==k});if(k==='S')loadStats();if(k==='C')loadC()}
