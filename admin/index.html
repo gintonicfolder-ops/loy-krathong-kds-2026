@@ -94,6 +94,7 @@ dialog::backdrop{background:rgba(5,8,18,.8);backdrop-filter:blur(5px)}
 .chip.on{border-color:var(--gold);color:var(--cl)}
 .cform{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.cform .full{grid-column:1/-1}
 @media(max-width:480px){.cform{grid-template-columns:1fr}}
+#cintro{min-height:96px;font-family:inherit;font-size:inherit}
 .pick{display:flex;gap:14px;align-items:flex-start}.pick .cph{flex-basis:110px}
 .panel .chk{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:14px;letter-spacing:0;color:var(--moon)}
 input[type=checkbox]{width:auto;accent-color:var(--gold)}
@@ -237,6 +238,8 @@ input[type=checkbox]{width:auto;accent-color:var(--gold)}
       <div class="full"><label for="cname">ชื่อ–นามสกุล</label><input id="cname" type="text" maxlength="120" autocomplete="off"></div>
       <div><label for="cnick">ชื่อเล่น</label><input id="cnick" type="text" maxlength="60" autocomplete="off"></div>
       <div><label for="ccls">ระดับชั้น/ห้อง</label><input id="ccls" type="text" maxlength="80" autocomplete="off"></div>
+      <div class="full"><label for="cintro">คำแนะนำตัว</label><textarea id="cintro" maxlength="1000" rows="4" spellcheck="false"></textarea></div>
+      <div class="full"><label for="cintrourl">ลิงก์โพสต์แนะนำตัว</label><input id="cintrourl" type="url" maxlength="500" inputmode="url" autocomplete="off" placeholder="https://..."></div>
     </div>
     <label class="chk"><input id="cpub" type="checkbox"> เผยแพร่บนหน้าเว็บ (ไม่ติ๊ก = ฉบับร่าง: ยังไม่แสดง และโหวตไม่ได้)</label>
     <div class="msg" id="cm2" role="alert"></div>
@@ -449,8 +452,8 @@ $('#iimp').onclick=async()=>{
 const CAT={nn:'ประเภท NN',nt:'ประเภท NT',tk:'ประเภท TK'};   /* ← รหัสประเภทตามฐานข้อมูล: แก้ชื่อที่แสดงได้ที่นี่ที่เดียว */
 const PUB=API.url+'/storage/v1/object/public/contestant-photos/';
 const OBJ=API.url+'/storage/v1/object/contestant-photos/';
-const CERR={invalid_category:'ประเภทไม่ถูกต้อง',invalid_number:'หมายเลขต้องเป็นจำนวนเต็ม 1–99',invalid_name:'กรุณากรอกชื่อ–นามสกุล',invalid_photo:'ที่อยู่รูปไม่ถูกต้อง',invalid_flag:'ค่าสถานะไม่ถูกต้อง',category_locked:'ย้ายประเภทไม่ได้ เพราะมีคะแนนโหวตแล้ว',is_deleted:'ข้อมูลนี้ถูกลบไปแล้ว',not_found:'ไม่พบข้อมูลนี้แล้ว',invalid_data:'ข้อมูลไม่ถูกต้อง',no_free_number:'ไม่มีหมายเลขว่างในประเภทนี้'};
-const CFLD={name:'ชื่อ–นามสกุล',nickname:'ชื่อเล่น',class_name:'ระดับชั้น/ห้อง'};
+const CERR={invalid_category:'ประเภทไม่ถูกต้อง',invalid_number:'หมายเลขต้องเป็นจำนวนเต็ม 1–99',invalid_name:'กรุณากรอกชื่อ–นามสกุล',invalid_photo:'ที่อยู่รูปไม่ถูกต้อง',invalid_flag:'ค่าสถานะไม่ถูกต้อง',category_locked:'ย้ายประเภทไม่ได้ เพราะมีคะแนนโหวตแล้ว',is_deleted:'ข้อมูลนี้ถูกลบไปแล้ว',not_found:'ไม่พบข้อมูลนี้แล้ว',invalid_data:'ข้อมูลไม่ถูกต้อง',invalid_url:'ลิงก์ไม่ถูกต้อง (ต้องขึ้นต้นด้วย http:// หรือ https://)',no_free_number:'ไม่มีหมายเลขว่างในประเภทนี้'};
+const CFLD={name:'ชื่อ–นามสกุล',nickname:'ชื่อเล่น',class_name:'ระดับชั้น/ห้อง',intro_text:'คำแนะนำตัว',intro_url:'ลิงก์โพสต์แนะนำตัว'};
 const cerr=j=>j.error==='number_taken'?'หมายเลขนี้ถูกใช้แล้ว'+(j.conflict_name?' (โดย '+j.conflict_name+')':'')
   :j.error==='too_long'?(CFLD[j.field]||j.field)+' ยาวเกินกำหนด':(CERR[j.error]||('ไม่สำเร็จ ('+j.error+')'));
 const C={items:[],cat:'',busy:false,edit:null};
@@ -521,7 +524,7 @@ function openC(c){
   $('#cT').textContent=c?'แก้ไขผู้เข้าประกวด':'เพิ่มผู้เข้าประกวด';
   $('#ccategory').value=c?c.category:(C.cat||Object.keys(CAT)[0]);$('#ccategory').disabled=!!(c&&c.votes>0);
   $('#cnum').value=c?c.number:'';$('#cnum').placeholder=c?'':'เว้นว่าง = ระบบเลือกเลขว่างให้';
-  $('#cname').value=c?c.name:'';$('#cnick').value=c&&c.nickname||'';$('#ccls').value=c&&c.class_name||'';
+  $('#cname').value=c?c.name:'';$('#cnick').value=c&&c.nickname||'';$('#ccls').value=c&&c.class_name||'';$('#cintro').value=c&&c.intro_text||'';$('#cintrourl').value=c&&c.intro_url||'';
   $('#cpub').checked=c?!!c.is_published:true;setPrev(c&&c.photo_path?PUB+c.photo_path:'');
   $('#dC').showModal()}
 $('#cadd').onclick=()=>openC(null);
@@ -532,9 +535,12 @@ $('#fC').addEventListener('submit',async ev=>{
   if(!name){m.textContent='กรุณากรอกชื่อ–นามสกุล';return}
   let num=null;if(numS!==''){num=Number(numS);if(!Number.isInteger(num)||num<1||num>99){m.textContent='หมายเลขต้องเป็นจำนวนเต็ม 1–99';return}}
   else if(edit){m.textContent='กรุณากรอกหมายเลขประกวด';return}
+  const introUrl=$('#cintrourl').value.trim();
+  if(introUrl){let u=null;try{u=new URL(introUrl)}catch(e){}
+    if(!u||!/^https?:$/.test(u.protocol)){m.textContent=cerr({error:'invalid_url'});return}}
   b.disabled=true;b.textContent='กำลังบันทึก…';let up=null;
   try{
-    const data={category:$('#ccategory').value,name,nickname:$('#cnick').value.trim(),class_name:$('#ccls').value.trim(),is_published:$('#cpub').checked};
+    const data={category:$('#ccategory').value,name,nickname:$('#cnick').value.trim(),class_name:$('#ccls').value.trim(),intro_text:$('#cintro').value.trim(),intro_url:introUrl,is_published:$('#cpub').checked};
     if(num!==null)data.number=num;
     if(ph.mode==='new'){up='photos/'+rid()+'.'+ph.ext;await upPhoto(ph.blob,up);data.photo_path=up}
     else if(ph.mode==='remove')data.photo_path=null;
