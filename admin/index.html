@@ -7,7 +7,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0B1020">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://vnunuryoqyhuendcvopm.supabase.co; base-uri 'none'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://vnunuryoqyhuendcvopm.supabase.co; connect-src https://vnunuryoqyhuendcvopm.supabase.co; base-uri 'none'; form-action 'self'">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -38,7 +38,7 @@ main{max-width:960px;margin:0 auto;padding:28px 16px calc(60px + env(safe-area-i
 .panel label{display:block;font-size:12px;letter-spacing:.12em;color:var(--gold);margin:14px 0 8px}
 .no{font-family:var(--serif);color:var(--gold);letter-spacing:.2em;font-size:12px}
 .center{text-align:center}
-input,textarea{width:100%;background:rgba(11,16,32,.6);border:1px solid rgba(217,210,195,.25);border-radius:12px;color:var(--moon);font:inherit;padding:11px 12px}
+input,textarea,select{width:100%;background:rgba(11,16,32,.6);border:1px solid rgba(217,210,195,.25);border-radius:12px;color:var(--moon);font:inherit;padding:11px 12px}
 textarea{min-height:150px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
 input[type=file]{padding:9px 12px;font-size:13px}
 .btn{font:inherit;color:var(--bg);background:linear-gradient(var(--cl),var(--gold));border:0;border-radius:99px;padding:12px 30px;cursor:pointer;letter-spacing:.06em;box-shadow:0 0 28px rgba(215,182,106,.3);transition:box-shadow .6s,opacity .3s}
@@ -46,9 +46,6 @@ input[type=file]{padding:9px 12px;font-size:13px}
 .btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
 .btn.ghost{background:none;color:var(--cl);border:1px solid rgba(215,182,106,.5);box-shadow:none}
 .btn.danger{background:linear-gradient(#f1c4c4,#c9625f);color:#2a0b0d;box-shadow:0 0 24px rgba(201,98,95,.3)}
-.vrow{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.vstate{font:400 22px var(--serif);color:var(--cl);display:flex;align-items:center;gap:10px;margin:2px 0}
-.dot{width:11px;height:11px;border-radius:50%;background:#777;flex:none}.dot.on{background:#7fd6a0;box-shadow:0 0 12px #7fd6a0}.dot.off{background:#c9625f}
 .msg{min-height:20px;font-size:13px;margin-top:12px;color:var(--err)}.msg.ok{color:var(--cl)}
 .sub{opacity:.75;font-size:14px}
 /* tabs */
@@ -82,6 +79,25 @@ dialog::backdrop{background:rgba(5,8,18,.8);backdrop-filter:blur(5px)}
 .dlgrow{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
 #toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:rgba(11,16,32,.95);border:1px solid rgba(215,182,106,.4);color:var(--cl);padding:10px 20px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .4s;max-width:90vw;text-align:center}
 #toast.on{opacity:1}
+/* ROYAL CONTEST */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.cc{display:flex;gap:12px;background:linear-gradient(160deg,rgba(21,28,50,.85),rgba(11,16,32,.8));border:1px solid rgba(215,182,106,.18);border-radius:16px;padding:12px}
+.cc.off{opacity:.65}
+.cph{flex:0 0 84px;align-self:flex-start;aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:rgba(11,16,32,.6);border:1px solid rgba(217,210,195,.2);display:flex;align-items:center;justify-content:center;font-size:11px;opacity:.95;text-align:center}
+.cph img{width:100%;height:100%;object-fit:cover;display:block}
+.cb{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.cb b{color:var(--cl);font-weight:500;overflow-wrap:anywhere}
+.cb .sub{font-size:13px;overflow-wrap:anywhere}
+.cb .chips{margin-top:6px}
+.cact{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:10px}
+.cact .mini{padding:4px 11px}
+.chip.on{border-color:var(--gold);color:var(--cl)}
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.cform .full{grid-column:1/-1}
+@media(max-width:480px){.cform{grid-template-columns:1fr}}
+.pick{display:flex;gap:14px;align-items:flex-start}.pick .cph{flex-basis:110px}
+.panel .chk{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:14px;letter-spacing:0;color:var(--moon)}
+input[type=checkbox]{width:auto;accent-color:var(--gold)}
+#dC .panel{max-width:560px;max-height:calc(100dvh - 32px);overflow:auto}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
 </style>
 </head>
@@ -133,18 +149,11 @@ dialog::backdrop{background:rgba(5,8,18,.8);backdrop-filter:blur(5px)}
   <!-- 4) หน้าจัดการ (แสดงเฉพาะเมื่อผ่านการตรวจสิทธิ์แอดมินแล้ว) -->
   <section class="view" id="vApp">
     <div class="center" style="margin-bottom:18px"><div class="no">ADMIN</div><h2 style="font-size:clamp(26px,5vw,38px)">จัดการข้อมูลกิจกรรม</h2></div>
-    <div class="panel wide" id="vpanel" style="margin-bottom:22px">
-      <div class="vrow">
-        <div><div class="no">ROYAL CONTEST · VOTING</div>
-          <div class="vstate" role="status" aria-live="polite"><i class="dot" id="vdot"></i><span id="vstate">กำลังโหลดสถานะ…</span></div>
-          <div class="sub" id="vsub">สวิตช์นี้ควบคุมการโหวตทั้ง 3 เวทีพร้อมกัน คะแนนและสิทธิ์โหวตเดิมไม่ถูกแตะต้อง</div></div>
-        <button class="btn" id="vtoggle" type="button" disabled>…</button>
-      </div>
-      <div class="msg" id="vmsg" role="alert"></div>
-    </div>
+    <div class="strip" id="vstrip"></div>
     <div class="tabs" role="tablist">
       <button type="button" role="tab" id="tabK" aria-selected="true" aria-controls="pK">กระทงและคำอธิษฐาน</button>
       <button type="button" role="tab" id="tabS" aria-selected="false" aria-controls="pS">นำเข้ารหัสนักเรียน</button>
+      <button type="button" role="tab" id="tabC" aria-selected="false" aria-controls="pC">ROYAL CONTEST</button>
     </div>
 
     <div id="pK" role="tabpanel" aria-labelledby="tabK">
@@ -159,6 +168,23 @@ dialog::backdrop{background:rgba(5,8,18,.8);backdrop-filter:blur(5px)}
           <button class="mini" id="kprev" type="button">← ก่อนหน้า</button><span id="kpg"></span><button class="mini" id="knext" type="button">ถัดไป →</button>
         </div>
         <div class="msg" id="kmsg" role="alert"></div>
+      </div>
+    </div>
+
+    <div id="pC" role="tabpanel" aria-labelledby="tabC" hidden>
+      <div class="panel wide">
+        <div class="bar">
+          <select id="ccat" aria-label="กรองตามประเภท" style="flex:0 1 200px;width:auto"></select>
+          <button class="btn" id="cadd" type="button" style="padding:9px 22px">＋ เพิ่มผู้เข้าประกวด</button>
+          <button class="mini" id="creload" type="button">↻ รีเฟรช</button>
+        </div>
+        <div class="sub" id="cinfo" style="margin-bottom:12px"></div>
+        <div class="cgrid" id="clist"></div>
+        <details id="cdel" style="margin-top:20px" hidden>
+          <summary class="sub" id="cdelsum" style="cursor:pointer"></summary>
+          <div class="cgrid" id="cdlist" style="margin-top:12px"></div>
+        </details>
+        <div class="msg" id="cmsg" role="alert"></div>
       </div>
     </div>
 
@@ -192,6 +218,30 @@ dialog::backdrop{background:rgba(5,8,18,.8);backdrop-filter:blur(5px)}
   <h3 id="aT" style="font-size:22px;margin-bottom:8px"></h3>
   <div id="aB" style="font-size:14px"></div>
   <div class="dlgrow"><button class="btn ghost" id="aNo" type="button">ยกเลิก</button><button class="btn" id="aYes" type="button">ยืนยัน</button></div>
+</div></dialog>
+<dialog id="dC"><div class="panel">
+  <h3 id="cT" style="font-size:22px"></h3>
+  <form id="fC" novalidate>
+    <label for="cpick">รูปภาพ</label>
+    <div class="pick">
+      <div class="cph" id="cprev"></div>
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="mini" id="cpick" type="button">เลือกรูปจากเครื่อง</button><button class="mini danger" id="crm" type="button" hidden>ลบรูป</button></div>
+        <p class="help" style="margin-top:8px">JPG / PNG / WebP · ระบบย่อรูปให้อัตโนมัติก่อนอัปโหลด</p>
+      </div>
+    </div>
+    <input id="cfile" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+    <div class="cform">
+      <div><label for="ccategory">ประเภท</label><select id="ccategory"></select></div>
+      <div><label for="cnum">หมายเลขประกวด</label><input id="cnum" type="number" min="1" max="99" step="1" inputmode="numeric"></div>
+      <div class="full"><label for="cname">ชื่อ–นามสกุล</label><input id="cname" type="text" maxlength="120" autocomplete="off"></div>
+      <div><label for="cnick">ชื่อเล่น</label><input id="cnick" type="text" maxlength="60" autocomplete="off"></div>
+      <div><label for="ccls">ระดับชั้น/ห้อง</label><input id="ccls" type="text" maxlength="80" autocomplete="off"></div>
+    </div>
+    <label class="chk"><input id="cpub" type="checkbox"> เผยแพร่บนหน้าเว็บ (ไม่ติ๊ก = ฉบับร่าง: ยังไม่แสดง และโหวตไม่ได้)</label>
+    <div class="msg" id="cm2" role="alert"></div>
+    <div class="dlgrow"><button class="btn ghost" id="ccancel" type="button">ยกเลิก</button><button class="btn" id="csave" type="submit">บันทึก</button></div>
+  </form>
 </div></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 
@@ -228,7 +278,7 @@ async function authPost(path,body,token){
 function adopt(j,email){S={access_token:j.access_token,refresh_token:j.refresh_token,expires_at:j.expires_at||Math.floor(Date.now()/1000)+(j.expires_in||3600),email:(j.user&&j.user.email)||email||(S&&S.email)||''};saveS()}
 function refreshOnce(){if(!refreshing)refreshing=(async()=>{try{if(!S)throw new Error('session_expired');const r=await authPost('/auth/v1/token?grant_type=refresh_token',{refresh_token:S.refresh_token});if(!r.ok||!r.j||!r.j.access_token)throw new Error('session_expired');adopt(r.j)}finally{refreshing=null}})();return refreshing}
 async function signOut(){const t=S&&S.access_token;S=null;saveS();clearApp();if(t){try{await authPost('/auth/v1/logout?scope=local',{},t)}catch(e){}}}
-function clearApp(){['#klist','#sstats','#ires'].forEach(s=>$(s).innerHTML='');V.open=null;$('#vstate').textContent='กำลังโหลดสถานะ…';$('#vdot').className='dot';$('#vtoggle').disabled=true;$('#vmsg').textContent='';$('#ires').hidden=true;$('#icodes').value='';$('#kq').value='';$('#iprev').textContent='ยังไม่มีรหัสให้ตรวจ';$('#iimp').disabled=true;$('#ifile').value=''}
+function clearApp(){['#klist','#sstats','#vstrip','#ires','#clist','#cdlist'].forEach(s=>$(s).innerHTML='');$('#ires').hidden=true;$('#icodes').value='';$('#kq').value='';$('#iprev').textContent='ยังไม่มีรหัสให้ตรวจ';$('#iimp').disabled=true;$('#ifile').value='';C.items=[];C.cat='';$('#ccat').value='';$('#cdel').hidden=true;if($('#dC').open)$('#dC').close()}
 
 /* ---------- RPC (แนบ JWT ของผู้ใช้; publishable key อยู่ใน apikey) ---------- */
 async function rpc(name,args,retry=true){
@@ -284,46 +334,17 @@ async function enter(){
     $('#checkMsg').innerHTML=esc(netMsg(e))+'<br><button class="mini" id="retry" type="button" style="margin-top:10px">ลองใหม่</button>';
     $('#retry').onclick=enter;return}
   if(ok!==true){await signOut();show('vDenied');return}      // ล็อกอินแล้วแต่ไม่ใช่แอดมิน: ไม่โหลดข้อมูลใด ๆ
-  show('vApp');tab('K');loadVoting();loadK(true)}
+  show('vApp');tab('K');loadStrip();loadK(true)}
 
-/* ---------- สวิตช์เปิด–ปิดโหวต ----------
-   สถานะเก็บใน public.contest_settings.voting_open (ฐานข้อมูลกลาง ทุกคนเห็นตรงกัน)
-   เปลี่ยนได้ผ่าน admin_set_voting_open ซึ่งตรวจ is_contest_admin() ในฐานข้อมูล
-   และ cast_vote ตรวจสถานะนี้ที่ฝั่งฐานข้อมูลทุกคำขอ — การซ่อนปุ่มบนหน้าเว็บไม่ใช่ตัวป้องกัน */
-const V={open:null,busy:false};
-function paintVoting(){
-  const o=V.open;
-  $('#vdot').className='dot'+(o===true?' on':o===false?' off':'');
-  $('#vstate').textContent=o===true?'กำลังเปิดรับโหวต':o===false?'ปิดรับโหวต':'ไม่ทราบสถานะ';
-  const b=$('#vtoggle');b.disabled=V.busy||o===null;b.className='btn'+(o===true?' danger':'');
-  b.textContent=V.busy?'กำลังบันทึก…':o===true?'ปิดรับโหวต':'เปิดรับโหวต'}
-async function loadVoting(){
-  try{const c=await rpc('get_contest_config',{});V.open=c&&typeof c.voting_open==='boolean'?c.voting_open:null;if(V.open===null)$('#vmsg').textContent='อ่านสถานะโหวตไม่สำเร็จ'}
-  catch(e){V.open=null;onFail(e,$('#vmsg'))}
-  paintVoting()}
-$('#vtoggle').addEventListener('click',async()=>{
-  if(V.busy||V.open===null)return;const target=!V.open,msg=$('#vmsg');msg.className='msg';msg.textContent='';
-  const yes=await ask(target?'เปิดรับโหวต?':'ปิดรับโหวต?',
-    target?'<p>นักเรียนที่มีรหัสถูกต้องจะโหวตได้ทันที ทั้ง 3 เวที ตามกติกาเดิม (1 รหัส : 1 สิทธิ์ : 1 เวที)</p><p style="margin-top:8px;opacity:.8">คะแนนและสิทธิ์โหวตเดิมไม่เปลี่ยน</p>'
-           :'<p>นักเรียนจะส่งคะแนนใหม่ไม่ได้ทุกเวทีทันที</p><p style="margin-top:8px;opacity:.8">คะแนนที่โหวตไปแล้วยังอยู่ครบ และเปิดใหม่ภายหลังได้โดยไม่รีเซ็ตอะไร</p>',
-    target?'เปิดรับโหวต':'ปิดรับโหวต',!target);
-  if(!yes)return;
-  V.busy=true;paintVoting();
-  try{
-    const j=await adm('admin_set_voting_open',{p_open:target});
-    if(j&&j.ok===true&&typeof j.voting_open==='boolean'){
-      V.open=j.voting_open;msg.className='msg ok';
-      msg.textContent=(j.changed===false?'สถานะเป็นอย่างนั้นอยู่แล้ว: ':'บันทึกสำเร็จ: ')+(V.open?'กำลังเปิดรับโหวต':'ปิดรับโหวต');
-      toast(V.open?'เปิดรับโหวตแล้ว':'ปิดรับโหวตแล้ว')}
-    else{msg.textContent='บันทึกไม่สำเร็จ'+(j&&j.error?' ('+j.error+')':'')+' — สถานะยังไม่ถูกเปลี่ยน';await loadVoting()}
-  }catch(e){if(!(e&&e.handled)&&!(e&&e.message==='session_expired')){msg.textContent='บันทึกไม่สำเร็จ: '+netMsg(e).replace(/^เกิดข้อผิดพลาด: /,'')+' — โปรดตรวจสถานะจริงอีกครั้ง';await loadVoting()}else onFail(e,msg)}
-  finally{V.busy=false;paintVoting()}});
-/* ซิงก์สถานะจากฐานข้อมูลทุก 30 วินาทีขณะเปิดหน้านี้ (กรณีมีผู้ดูแลหลายคน) */
-setInterval(()=>{if(S&&$('#vApp').classList.contains('on')&&!V.busy&&!document.hidden)loadVoting()},30000);
+/* ---------- แถบสถานะโหวต (อ่านอย่างเดียว — หน้านี้ไม่มีปุ่มเปิด/ปิดโหวต) ---------- */
+async function loadStrip(){
+  try{const c=await rpc('get_contest_config',{});const o=c&&c.voting_open===true;
+    $('#vstrip').innerHTML=`<span>ระบบโหวต: <b>${o?'เปิดรับโหวต':'ปิดรับโหวต'}</b></span><span>ใช้ PIN: <b>${c&&c.require_pin?'ใช่':'ไม่'}</b></span><span style="opacity:.65">(เปิด/ปิดโหวตทำใน Supabase SQL Editor เท่านั้น)</span>`}
+  catch(e){$('#vstrip').innerHTML=''}}
 
 /* ---------- tabs ---------- */
-function tab(k){const K=k==='K';$('#tabK').setAttribute('aria-selected',K);$('#tabS').setAttribute('aria-selected',!K);$('#pK').hidden=!K;$('#pS').hidden=K;if(!K)loadStats()}
-$('#tabK').onclick=()=>tab('K');$('#tabS').onclick=()=>tab('S');
+function tab(k){['K','S','C'].forEach(x=>{$('#tab'+x).setAttribute('aria-selected',x===k);$('#p'+x).hidden=x!==k});if(k==='S')loadStats();if(k==='C')loadC()}
+$('#tabK').onclick=()=>tab('K');$('#tabS').onclick=()=>tab('S');$('#tabC').onclick=()=>tab('C');
 
 /* ---------- กระทง ---------- */
 const K={page:0,size:25,q:'',matched:0,total:0,items:[],busy:false};
@@ -402,6 +423,123 @@ $('#iimp').onclick=async()=>{
     $('#icodes').value='';$('#ifile').value='';prev();loadStats();
   }catch(e){msg.className='msg';if(e&&e.handled)return;if(e&&e.message==='session_expired'){onFail(e);return}msg.textContent=(e instanceof TypeError?netMsg(e):e.message)+(sent?` — นำเข้าไปแล้ว ${nf(sent)} รหัสก่อนหน้านี้ (ทำซ้ำได้อย่างปลอดภัย)`:'')}
   finally{b.disabled=!AN.valid.length}};
+
+/* ---------- ROYAL CONTEST (ผู้เข้าประกวด) ----------
+   ข้อมูลอยู่ในตาราง contestants เดิม ผ่าน RPC admin_list/save/delete/restore_contestant (ตรวจ is_contest_admin ในฐานข้อมูล)
+   รูปเก็บใน Supabase Storage bucket "contestant-photos" (อ่านสาธิต / เขียนได้เฉพาะแอดมิน) — ไม่แตะ votes / contest_settings */
+const CAT={nn:'ประเภท NN',nt:'ประเภท NT',tk:'ประเภท TK'};   /* ← รหัสประเภทตามฐานข้อมูล: แก้ชื่อที่แสดงได้ที่นี่ที่เดียว */
+const PUB=API.url+'/storage/v1/object/public/contestant-photos/';
+const OBJ=API.url+'/storage/v1/object/contestant-photos/';
+const CERR={invalid_category:'ประเภทไม่ถูกต้อง',invalid_number:'หมายเลขต้องเป็นจำนวนเต็ม 1–99',invalid_name:'กรุณากรอกชื่อ–นามสกุล',invalid_photo:'ที่อยู่รูปไม่ถูกต้อง',invalid_flag:'ค่าสถานะไม่ถูกต้อง',category_locked:'ย้ายประเภทไม่ได้ เพราะมีคะแนนโหวตแล้ว',is_deleted:'ข้อมูลนี้ถูกลบไปแล้ว',not_found:'ไม่พบข้อมูลนี้แล้ว',invalid_data:'ข้อมูลไม่ถูกต้อง',no_free_number:'ไม่มีหมายเลขว่างในประเภทนี้'};
+const CFLD={name:'ชื่อ–นามสกุล',nickname:'ชื่อเล่น',class_name:'ระดับชั้น/ห้อง'};
+const cerr=j=>j.error==='number_taken'?'หมายเลขนี้ถูกใช้แล้ว'+(j.conflict_name?' (โดย '+j.conflict_name+')':'')
+  :j.error==='too_long'?(CFLD[j.field]||j.field)+' ยาวเกินกำหนด':(CERR[j.error]||('ไม่สำเร็จ ('+j.error+')'));
+const C={items:[],cat:'',busy:false,edit:null};
+let ph={mode:'keep'};
+const rid=()=>{const a=new Uint8Array(10);crypto.getRandomValues(a);return 'c'+[...a].map(x=>x.toString(16).padStart(2,'0')).join('')};
+const catOpts=(all)=>(all?'<option value="">ทุกประเภท</option>':'')+Object.keys(CAT).map(k=>`<option value="${k}">${esc(CAT[k])}</option>`).join('');
+$('#ccat').innerHTML=catOpts(true);$('#ccategory').innerHTML=catOpts(false);
+
+async function loadC(){
+  if(C.busy)return;C.busy=true;const msg=$('#cmsg');msg.textContent='';
+  try{const j=await adm('admin_list_contestants',{});
+    if(!j||j.ok!==true){msg.textContent='โหลดรายการไม่สำเร็จ';return}
+    C.items=j.contestants||[];renderC()}
+  catch(e){onFail(e,msg)}finally{C.busy=false}}
+function cardC(c){
+  const del=!!c.deleted_at,src=c.photo_path?PUB+c.photo_path:'';
+  return `<article class="cc${del||!c.is_published?' off':''}"><div class="cph">${src?`<img src="${esc(src)}" alt="" loading="lazy">`:'ไม่มีรูป'}</div><div class="cb">`
+   +`<div class="no">${esc(CAT[c.category]||c.category)} · หมายเลข ${esc(c.number)}</div><b>${esc(c.name)}</b>`
+   +(c.nickname?`<div class="sub">ชื่อเล่น ${esc(c.nickname)}</div>`:'')+(c.class_name?`<div class="sub">${esc(c.class_name)}</div>`:'')
+   +`<div class="chips">${del?'<span class="chip">ถูกลบ</span>':`<span class="chip${c.is_published?' on':''}">${c.is_published?'เผยแพร่แล้ว':'ฉบับร่าง'}</span>`}<span class="chip">โหวต ${nf(c.votes)}</span></div>`
+   +`<div class="cact">`+(del?`<button class="mini" type="button" data-restore="${esc(c.id)}">กู้คืน</button>`
+     :`<button class="mini" type="button" data-edit="${esc(c.id)}">แก้ไข</button><button class="mini" type="button" data-pub="${esc(c.id)}">${c.is_published?'ซ่อน':'เผยแพร่'}</button><button class="mini danger" type="button" data-cdel="${esc(c.id)}">ลบ</button>`)
+   +`</div></div></article>`}
+function renderC(){
+  const act=C.items.filter(c=>!c.deleted_at),del=C.items.filter(c=>c.deleted_at),shown=act.filter(c=>!C.cat||c.category===C.cat);
+  $('#cinfo').textContent=C.cat?`${CAT[C.cat]||C.cat}: ${nf(shown.length)} คน (ทั้งหมด ${nf(act.length)} คน)`:`ผู้เข้าประกวดทั้งหมด ${nf(act.length)} คน`;
+  $('#clist').innerHTML=shown.length?shown.map(cardC).join(''):`<div class="empty" style="grid-column:1/-1">ยังไม่มีผู้เข้าประกวด${C.cat?'ในประเภทนี้':''} — กด “เพิ่มผู้เข้าประกวด”</div>`;
+  const dd=del.filter(c=>!C.cat||c.category===C.cat);
+  $('#cdel').hidden=!dd.length;$('#cdelsum').textContent=`ที่ลบแล้ว (${nf(dd.length)}) — กู้คืนได้ คะแนนเดิมยังอยู่`;$('#cdlist').innerHTML=dd.map(cardC).join('')}
+$('#ccat').onchange=e=>{C.cat=e.target.value;renderC()};
+$('#creload').onclick=()=>loadC();
+
+/* ---- รูป: ย่อในเบราว์เซอร์ก่อนอัปโหลด (ด้านยาวสุด 1000px) ---- */
+function prepImg(file){return new Promise((res,rej)=>{
+  const fr=new FileReader();fr.onerror=()=>rej(new Error('bad_image'));
+  fr.onload=()=>{const url=fr.result,im=new Image();im.onerror=()=>rej(new Error('bad_image'));
+    im.onload=()=>{
+      const k=Math.min(1,1000/Math.max(im.naturalWidth,im.naturalHeight)),w=Math.max(1,Math.round(im.naturalWidth*k)),h=Math.max(1,Math.round(im.naturalHeight*k));
+      const cv=document.createElement('canvas');cv.width=w;cv.height=h;const g=cv.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,w,h);g.drawImage(im,0,0,w,h);
+      cv.toBlob(b=>{
+        if(b&&b.type==='image/webp')return res({blob:b,ext:'webp',url});
+        cv.toBlob(b2=>b2?res({blob:b2,ext:'jpg',url}):rej(new Error('bad_image')),'image/jpeg',.88)},'image/webp',.85)};
+    im.src=url};
+  fr.readAsDataURL(file)})}
+async function storage(method,path,blob){
+  const go=()=>fetch(OBJ+path,{method,headers:Object.assign({apikey:API.key,Authorization:'Bearer '+S.access_token},blob?{'Content-Type':blob.type,'x-upsert':'false'}:{}),body:blob||undefined});
+  if(!S)throw new Error('session_expired');
+  if(S.expires_at-60<Date.now()/1000)await refreshOnce();
+  let r=await go();if(r.status===401){await refreshOnce();r=await go()}
+  return r}
+async function upPhoto(blob,path){
+  const r=await storage('POST',path,blob);
+  if(!r.ok){let j=null;try{j=await r.json()}catch(e){}throw new Error('อัปโหลดรูปไม่สำเร็จ'+(j&&j.message?' ('+j.message+')':''))}}
+const rmPhoto=async path=>{try{await storage('DELETE',path)}catch(e){}};   /* ลบไฟล์เก่า: best-effort */
+function setPrev(src){$('#cprev').innerHTML=src?`<img src="${esc(src)}" alt="ตัวอย่างรูป">`:'ไม่มีรูป';$('#crm').hidden=!src}
+$('#cpick').onclick=()=>$('#cfile').click();
+$('#cfile').addEventListener('change',async e=>{
+  const f=e.target.files&&e.target.files[0];if(!f)return;const m=$('#cm2');m.textContent='';
+  if(!/^image\/(jpeg|png|webp)$/.test(f.type)){m.textContent='รองรับเฉพาะไฟล์ JPG / PNG / WebP';e.target.value='';return}
+  if(f.size>15*1024*1024){m.textContent='ไฟล์ใหญ่เกิน 15 MB';e.target.value='';return}
+  try{const p=await prepImg(f);ph={mode:'new',blob:p.blob,ext:p.ext};setPrev(p.url)}
+  catch(err){m.textContent='อ่านรูปไม่สำเร็จ ลองไฟล์อื่น'}finally{e.target.value=''}});
+$('#crm').onclick=()=>{ph=(C.edit&&C.edit.photo_path)?{mode:'remove'}:{mode:'keep'};setPrev('')};
+
+/* ---- ฟอร์มเพิ่ม/แก้ไข ---- */
+function openC(c){
+  C.edit=c||null;ph={mode:'keep'};$('#cm2').textContent='';$('#cm2').className='msg';
+  $('#cT').textContent=c?'แก้ไขผู้เข้าประกวด':'เพิ่มผู้เข้าประกวด';
+  $('#ccategory').value=c?c.category:(C.cat||Object.keys(CAT)[0]);$('#ccategory').disabled=!!(c&&c.votes>0);
+  $('#cnum').value=c?c.number:'';$('#cnum').placeholder=c?'':'เว้นว่าง = ระบบเลือกเลขว่างให้';
+  $('#cname').value=c?c.name:'';$('#cnick').value=c&&c.nickname||'';$('#ccls').value=c&&c.class_name||'';
+  $('#cpub').checked=c?!!c.is_published:true;setPrev(c&&c.photo_path?PUB+c.photo_path:'');
+  $('#dC').showModal()}
+$('#cadd').onclick=()=>openC(null);
+$('#ccancel').onclick=()=>$('#dC').close();
+$('#fC').addEventListener('submit',async ev=>{
+  ev.preventDefault();const m=$('#cm2'),b=$('#csave');m.className='msg';m.textContent='';
+  const name=$('#cname').value.trim(),numS=$('#cnum').value.trim(),edit=C.edit;
+  if(!name){m.textContent='กรุณากรอกชื่อ–นามสกุล';return}
+  let num=null;if(numS!==''){num=Number(numS);if(!Number.isInteger(num)||num<1||num>99){m.textContent='หมายเลขต้องเป็นจำนวนเต็ม 1–99';return}}
+  else if(edit){m.textContent='กรุณากรอกหมายเลขประกวด';return}
+  b.disabled=true;b.textContent='กำลังบันทึก…';let up=null;
+  try{
+    const data={category:$('#ccategory').value,name,nickname:$('#cnick').value.trim(),class_name:$('#ccls').value.trim(),is_published:$('#cpub').checked};
+    if(num!==null)data.number=num;
+    if(ph.mode==='new'){up='photos/'+rid()+'.'+ph.ext;await upPhoto(ph.blob,up);data.photo_path=up}
+    else if(ph.mode==='remove')data.photo_path=null;
+    const j=await adm('admin_save_contestant',{p_id:edit?edit.id:null,p_data:data});
+    if(!j||j.ok!==true){if(up)rmPhoto(up);m.textContent=j&&j.error?cerr(j):'บันทึกไม่สำเร็จ';return}
+    if(edit&&edit.photo_path&&(ph.mode==='new'||ph.mode==='remove'))rmPhoto(edit.photo_path);
+    $('#dC').close();toast(edit?'บันทึกการแก้ไขแล้ว':'เพิ่มผู้เข้าประกวดแล้ว');loadC();
+  }catch(e){
+    if(e&&(e.handled||e.message==='session_expired')){$('#dC').close();onFail(e);return}
+    m.textContent=e instanceof TypeError?netMsg(e):e.message}
+  finally{b.disabled=false;b.textContent='บันทึก'}});
+
+/* ---- ปุ่มบนการ์ด: แก้ไข / เผยแพร่-ซ่อน / ลบ / กู้คืน ---- */
+const cById=id=>C.items.find(x=>String(x.id)===String(id));
+async function cAct(fn,okMsg){try{const j=await fn();if(j&&j.ok){toast(okMsg);}else toast(j&&j.error?cerr(j):'ไม่สำเร็จ');loadC()}catch(e){onFail(e)}}
+$('#pC').addEventListener('click',async e=>{
+  const t=e.target.closest('[data-edit],[data-pub],[data-cdel],[data-restore]');if(!t)return;
+  const id=t.dataset.edit||t.dataset.pub||t.dataset.cdel||t.dataset.restore,c=cById(id);if(!c)return;
+  if(t.dataset.edit!==undefined)return openC(c);
+  if(t.dataset.pub!==undefined){t.disabled=true;return cAct(()=>adm('admin_save_contestant',{p_id:c.id,p_data:{is_published:!c.is_published}}),c.is_published?'ซ่อนจากหน้าเว็บแล้ว':'เผยแพร่แล้ว')}
+  if(t.dataset.cdel!==undefined){
+    const yes=await ask('ลบผู้เข้าประกวดนี้?',`<p style="margin-bottom:8px">จะ<b>ซ่อนจากทุกหน้าและหยุดรับโหวต</b> แต่ข้อมูลและคะแนนเดิม (${nf(c.votes)} โหวต) ยังเก็บไว้ในฐานข้อมูล กู้คืนได้จากรายการ “ที่ลบแล้ว”</p><div class="kr"><b>${esc(c.name)}</b><div class="sub">${esc(CAT[c.category]||c.category)} · หมายเลข ${esc(c.number)}</div></div>`,'ลบ',true);
+    if(!yes)return;t.disabled=true;return cAct(()=>adm('admin_delete_contestant',{p_id:c.id}),'ลบแล้ว (กู้คืนได้)')}
+  if(t.dataset.restore!==undefined){t.disabled=true;return cAct(()=>adm('admin_restore_contestant',{p_id:c.id}),'กู้คืนแล้ว — กลับมาเป็นฉบับร่าง กด “เผยแพร่” เมื่อพร้อม')}});
 
 /* ---------- เริ่มต้น ---------- */
 (async function boot(){
