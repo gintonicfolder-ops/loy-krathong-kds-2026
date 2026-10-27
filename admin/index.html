@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ทีมงาน · Loy Krathong KDS 2026</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#0B1020">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://vnunuryoqyhuendcvopm.supabase.co; connect-src https://vnunuryoqyhuendcvopm.supabase.co; base-uri 'none'; form-action 'self'">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0B1020;--bg2:#151C32;--moon:#D9D2C3;--gold:#D7B66A;--cl:#F4DFA5;--red:#7A1A22;--err:#e8a9a9;--serif:'Noto Sans Thai',system-ui,sans-serif;--sans:'Noto Sans Thai',system-ui,sans-serif;box-sizing:border-box}
+*{box-sizing:inherit;margin:0}
+[hidden]{display:none!important}
+html,body{min-height:100%}
+body{background:radial-gradient(ellipse at 50% 0%,#1b2547 0%,var(--bg) 60%) fixed;color:var(--moon);font-family:var(--sans);font-weight:300;line-height:1.6;padding-top:env(safe-area-inset-top,0px)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:.04em;color:var(--cl)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+/* top bar (same pill language as the main site nav) */
+.top{position:sticky;top:calc(10px + env(safe-area-inset-top,0px));z-index:10;margin:10px 12px 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 14px 8px 22px;border-radius:22px;background:rgba(11,16,32,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(215,182,106,.18)}
+.brand{font-family:var(--serif);letter-spacing:.18em;color:var(--cl);font-size:14px;text-decoration:none;white-space:nowrap}
+.tag{font-size:10px;letter-spacing:.2em;color:var(--moon);border:1px solid var(--red);background:rgba(122,26,34,.35);padding:2px 10px;border-radius:99px}
+.grow{flex:1}
+#who{font-size:12px;opacity:.75;overflow:hidden;text-overflow:ellipsis;max-width:42vw;white-space:nowrap}
+.mini{display:inline-flex;align-items:center;gap:6px;background:none;border:1px solid rgba(215,182,106,.25);color:var(--moon);font:inherit;font-size:12px;padding:6px 12px;border-radius:99px;cursor:pointer;text-decoration:none;transition:.4s}
+.mini:hover{border-color:var(--gold);color:var(--cl)}
+.mini.danger{border-color:rgba(232,169,169,.45);color:var(--err)}.mini.danger:hover{border-color:var(--err);background:rgba(232,169,169,.08)}
+main{max-width:960px;margin:0 auto;padding:28px 16px calc(60px + env(safe-area-inset-bottom,0px))}
+.view{display:none}.view.on{display:block;animation:fade .6s both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.panel{max-width:520px;margin:0 auto;background:rgba(21,28,50,.72);border:1px solid rgba(215,182,106,.2);border-radius:18px;padding:22px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.panel.wide{max-width:none}
+.panel label{display:block;font-size:12px;letter-spacing:.12em;color:var(--gold);margin:14px 0 8px}
+.no{font-family:var(--serif);color:var(--gold);letter-spacing:.2em;font-size:12px}
+.center{text-align:center}
+input,textarea,select{width:100%;background:rgba(11,16,32,.6);border:1px solid rgba(217,210,195,.25);border-radius:12px;color:var(--moon);font:inherit;padding:11px 12px}
+textarea{min-height:150px;resize:vertical;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px}
+input[type=file]{padding:9px 12px;font-size:13px}
+.btn{font:inherit;color:var(--bg);background:linear-gradient(var(--cl),var(--gold));border:0;border-radius:99px;padding:12px 30px;cursor:pointer;letter-spacing:.06em;box-shadow:0 0 28px rgba(215,182,106,.3);transition:box-shadow .6s,opacity .3s}
+.btn:hover{box-shadow:0 0 44px rgba(244,223,165,.5)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;box-shadow:none}
+.btn.ghost{background:none;color:var(--cl);border:1px solid rgba(215,182,106,.5);box-shadow:none}
+.btn.danger{background:linear-gradient(#f1c4c4,#c9625f);color:#2a0b0d;box-shadow:0 0 24px rgba(201,98,95,.3)}
+.msg{min-height:20px;font-size:13px;margin-top:12px;color:var(--err)}.msg.ok{color:var(--cl)}
+.sub{opacity:.75;font-size:14px}
+/* tabs */
+.tabs{display:flex;gap:6px;margin:0 auto 22px;justify-content:center;flex-wrap:wrap}
+.tabs button{background:none;border:0;border-bottom:2px solid rgba(217,210,195,.2);color:rgba(217,210,195,.6);font:inherit;font-size:14px;letter-spacing:.06em;padding:9px 18px;cursor:pointer}
+.tabs button[aria-selected=true]{border-color:var(--gold);color:var(--cl)}
+.strip{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;font-size:13px;opacity:.85;margin-bottom:22px}
+.strip b{color:var(--cl);font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:14px 0 4px}
+.stat{border:1px solid rgba(215,182,106,.18);border-radius:14px;padding:10px 12px;text-align:center;background:rgba(11,16,32,.35)}
+.stat b{display:block;font:400 24px var(--serif);color:var(--cl)}.stat span{font-size:11px;letter-spacing:.08em;opacity:.7}
+/* krathong list */
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.bar input{flex:1 1 220px;width:auto}
+.list{display:grid;gap:12px}
+.kr{background:linear-gradient(160deg,rgba(21,28,50,.85),rgba(11,16,32,.8));border:1px solid rgba(215,182,106,.18);border-radius:16px;padding:14px 16px}
+.kh{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.kh b{color:var(--cl);font-weight:500;overflow-wrap:anywhere}.kh time{font-size:12px;opacity:.65}
+.kw{margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid rgba(217,210,195,.25);border-radius:99px;padding:2px 11px;font-size:12px}
+.kf{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:10px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;opacity:.55;overflow-wrap:anywhere}
+.pager{display:flex;gap:12px;align-items:center;justify-content:center;margin-top:18px;font-size:13px}
+.empty{text-align:center;opacity:.7;padding:30px 10px}
+.help{font-size:13px;opacity:.78;line-height:1.8}.help li{margin-left:1.2em}
+.res{border:1px solid rgba(215,182,106,.25);border-radius:14px;padding:12px 14px;margin-top:14px;font-size:14px;background:rgba(11,16,32,.35)}
+.warn{color:var(--err)}
+/* dialog + toast */
+dialog{border:0;background:none;color:inherit;max-width:100vw;max-height:100vh;padding:16px;margin:auto}
+dialog::backdrop{background:rgba(5,8,18,.8);backdrop-filter:blur(5px)}
+.dlgrow{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:30;background:rgba(11,16,32,.95);border:1px solid rgba(215,182,106,.4);color:var(--cl);padding:10px 20px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .4s;max-width:90vw;text-align:center}
+#toast.on{opacity:1}
+/* ROYAL CONTEST */
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.cc{display:flex;gap:12px;background:linear-gradient(160deg,rgba(21,28,50,.85),rgba(11,16,32,.8));border:1px solid rgba(215,182,106,.18);border-radius:16px;padding:12px}
+.cc.off{opacity:.65}
+.cph{flex:0 0 84px;align-self:flex-start;aspect-ratio:3/4;border-radius:10px;overflow:hidden;background:rgba(11,16,32,.6);border:1px solid rgba(217,210,195,.2);display:flex;align-items:center;justify-content:center;font-size:11px;opacity:.95;text-align:center}
+.cph img{width:100%;height:100%;object-fit:cover;display:block}
+.cb{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.cb b{color:var(--cl);font-weight:500;overflow-wrap:anywhere}
+.cb .sub{font-size:13px;overflow-wrap:anywhere}
+.cb .chips{margin-top:6px}
+.cact{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:10px}
+.cact .mini{padding:4px 11px}
+.chip.on{border-color:var(--gold);color:var(--cl)}
+.cform{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.cform .full{grid-column:1/-1}
+@media(max-width:480px){.cform{grid-template-columns:1fr}}
+.pick{display:flex;gap:14px;align-items:flex-start}.pick .cph{flex-basis:110px}
+.panel .chk{display:flex;gap:8px;align-items:center;margin-top:16px;font-size:14px;letter-spacing:0;color:var(--moon)}
+input[type=checkbox]{width:auto;accent-color:var(--gold)}
+#dC .panel{max-width:560px;max-height:calc(100dvh - 32px);overflow:auto}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/">Loy Krathong KDS 2026</a><span class="tag">TEAM</span>
+  <div class="grow"></div>
+  <span id="who"></span>
+  <button class="mini" id="out" type="button" hidden>ออกจากระบบ</button>
+  <a class="mini" href="/">← หน้าเว็บหลัก</a>
+</header>
+
+<main>
+  <!-- 1) เข้าสู่ระบบ -->
+  <section class="view" id="vLogin" aria-labelledby="tLogin">
+    <div class="panel">
+      <div class="no center">STAFF ONLY</div>
+      <h2 id="tLogin" class="center" style="font-size:28px;margin:4px 0 4px">สำหรับทีมงาน</h2>
+      <p class="sub center">เข้าสู่ระบบด้วยบัญชีทีมงานเพื่อจัดการข้อมูล</p>
+      <form id="fLogin" autocomplete="on" novalidate>
+        <label for="em">อีเมล</label>
+        <input id="em" name="email" type="email" inputmode="email" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+        <label for="pw">รหัสผ่าน</label>
+        <input id="pw" name="password" type="password" autocomplete="current-password" required>
+        <div class="msg" id="loginMsg" role="alert"></div>
+        <div class="center" style="margin-top:8px"><button class="btn" id="loginBtn" type="submit">เข้าสู่ระบบ</button></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 2) กำลังตรวจสิทธิ์ -->
+  <section class="view" id="vCheck">
+    <div class="panel center"><p>กำลังตรวจสอบสิทธิ์ทีมงาน…</p><div class="msg" id="checkMsg"></div></div>
+  </section>
+
+  <!-- 3) ไม่มีสิทธิ์ -->
+  <section class="view" id="vDenied">
+    <div class="panel center">
+      <div class="no">ACCESS DENIED</div>
+      <h2 style="font-size:26px;margin:6px 0 10px">บัญชีนี้ไม่มีสิทธิ์ทีมงาน</h2>
+      <p class="sub">ระบบได้ออกจากระบบให้แล้ว และไม่ได้โหลดข้อมูลใด ๆ<br>หากควรมีสิทธิ์ กรุณาติดต่อผู้ดูแลระบบ</p>
+      <div style="margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn ghost" id="denyBack" type="button">ลองบัญชีอื่น</button>
+        <a class="btn" href="/" style="text-decoration:none;display:inline-block">กลับหน้าเว็บหลัก</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) หน้าจัดการ (แสดงเฉพาะเมื่อผ่านการตรวจสิทธิ์แอดมินแล้ว) -->
+  <section class="view" id="vApp">
+    <div class="center" style="margin-bottom:18px"><div class="no">ADMIN</div><h2 style="font-size:clamp(26px,5vw,38px)">จัดการข้อมูลกิจกรรม</h2></div>
+    <div class="strip" id="vstrip"></div>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tabK" aria-selected="true" aria-controls="pK">กระทงและคำอธิษฐาน</button>
+      <button type="button" role="tab" id="tabS" aria-selected="false" aria-controls="pS">นำเข้ารหัสนักเรียน</button>
+      <button type="button" role="tab" id="tabC" aria-selected="false" aria-controls="pC">ROYAL CONTEST</button>
+    </div>
+
+    <div id="pK" role="tabpanel" aria-labelledby="tabK">
+      <div class="panel wide">
+        <div class="bar">
+          <input id="kq" type="search" placeholder="ค้นหาชื่อ / คำอธิษฐาน / รหัสกระทง" maxlength="100" autocomplete="off" aria-label="ค้นหากระทง">
+          <button class="mini" id="kreload" type="button">↻ รีเฟรช</button>
+        </div>
+        <div class="sub" id="kinfo" style="margin-bottom:12px"></div>
+        <div class="list" id="klist"></div>
+        <div class="pager" id="kpager" hidden>
+          <button class="mini" id="kprev" type="button">← ก่อนหน้า</button><span id="kpg"></span><button class="mini" id="knext" type="button">ถัดไป →</button>
+        </div>
+        <div class="msg" id="kmsg" role="alert"></div>
+      </div>
+    </div>
+
+    <div id="pC" role="tabpanel" aria-labelledby="tabC" hidden>
+      <div class="panel wide">
+        <div class="bar">
+          <select id="ccat" aria-label="กรองตามประเภท" style="flex:0 1 200px;width:auto"></select>
+          <button class="btn" id="cadd" type="button" style="padding:9px 22px">＋ เพิ่มผู้เข้าประกวด</button>
+          <button class="mini" id="creload" type="button">↻ รีเฟรช</button>
+        </div>
+        <div class="sub" id="cinfo" style="margin-bottom:12px"></div>
+        <div class="cgrid" id="clist"></div>
+        <details id="cdel" style="margin-top:20px" hidden>
+          <summary class="sub" id="cdelsum" style="cursor:pointer"></summary>
+          <div class="cgrid" id="cdlist" style="margin-top:12px"></div>
+        </details>
+        <div class="msg" id="cmsg" role="alert"></div>
+      </div>
+    </div>
+
+    <div id="pS" role="tabpanel" aria-labelledby="tabS" hidden>
+      <div class="panel wide">
+        <h3 style="font-size:20px">นักเรียนในระบบ</h3>
+        <div class="stats" id="sstats"></div>
+        <h3 style="font-size:20px;margin-top:22px">นำเข้ารหัสนักเรียน</h3>
+        <ul class="help" style="margin-top:6px">
+          <li>หนึ่งรหัสต่อหนึ่งบรรทัด (ถ้าเป็นไฟล์ CSV จะใช้คอลัมน์แรกเท่านั้น)</li>
+          <li>ระบบแปลงเป็นตัวพิมพ์ใหญ่ให้อัตโนมัติ · ความยาว 3–32 ตัวอักษร · ห้ามมีช่องว่างในรหัส</li>
+          <li>เพิ่มเฉพาะรหัสใหม่ — รหัสที่มีอยู่แล้วจะไม่ถูกแก้ไข และ <b>การนำเข้าไม่เปิดระบบโหวต</b></li>
+        </ul>
+        <label for="ifile">เลือกไฟล์ .csv / .txt (ไม่บังคับ)</label>
+        <input id="ifile" type="file" accept=".csv,.txt,text/csv,text/plain">
+        <label for="icodes">หรือวางรหัสนักเรียนที่นี่</label>
+        <textarea id="icodes" spellcheck="false" autocomplete="off" autocapitalize="characters" placeholder="KDS69001&#10;KDS69002&#10;KDS69003"></textarea>
+        <div class="res" id="iprev" aria-live="polite">ยังไม่มีรหัสให้ตรวจ</div>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn" id="iimp" type="button" disabled>นำเข้ารหัสนักเรียน</button>
+          <button class="btn ghost" id="iclear" type="button">ล้าง</button>
+        </div>
+        <div class="msg" id="imsg" role="alert"></div>
+        <div class="res" id="ires" hidden></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog id="dAsk"><div class="panel" style="max-width:480px">
+  <h3 id="aT" style="font-size:22px;margin-bottom:8px"></h3>
+  <div id="aB" style="font-size:14px"></div>
+  <div class="dlgrow"><button class="btn ghost" id="aNo" type="button">ยกเลิก</button><button class="btn" id="aYes" type="button">ยืนยัน</button></div>
+</div></dialog>
+<dialog id="dC"><div class="panel">
+  <h3 id="cT" style="font-size:22px"></h3>
+  <form id="fC" novalidate>
+    <label for="cpick">รูปภาพ</label>
+    <div class="pick">
+      <div class="cph" id="cprev"></div>
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="mini" id="cpick" type="button">เลือกรูปจากเครื่อง</button><button class="mini danger" id="crm" type="button" hidden>ลบรูป</button></div>
+        <p class="help" style="margin-top:8px">JPG / PNG / WebP · ระบบย่อรูปให้อัตโนมัติก่อนอัปโหลด</p>
+      </div>
+    </div>
+    <input id="cfile" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+    <div class="cform">
+      <div><label for="ccategory">ประเภท</label><select id="ccategory"></select></div>
+      <div><label for="cnum">หมายเลขประกวด</label><input id="cnum" type="number" min="1" max="99" step="1" inputmode="numeric"></div>
+      <div class="full"><label for="cname">ชื่อ–นามสกุล</label><input id="cname" type="text" maxlength="120" autocomplete="off"></div>
+      <div><label for="cnick">ชื่อเล่น</label><input id="cnick" type="text" maxlength="60" autocomplete="off"></div>
+      <div><label for="ccls">ระดับชั้น/ห้อง</label><input id="ccls" type="text" maxlength="80" autocomplete="off"></div>
+    </div>
+    <label class="chk"><input id="cpub" type="checkbox"> เผยแพร่บนหน้าเว็บ (ไม่ติ๊ก = ฉบับร่าง: ยังไม่แสดง และโหวตไม่ได้)</label>
+    <div class="msg" id="cm2" role="alert"></div>
+    <div class="dlgrow"><button class="btn ghost" id="ccancel" type="button">ยกเลิก</button><button class="btn" id="csave" type="submit">บันทึก</button></div>
+  </form>
+</div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   หน้า Admin · Loy Krathong KDS 2026
+   - ใช้ Supabase Auth (REST) + publishable key เท่านั้น  (ห้ามใส่ service_role / secret key ในไฟล์นี้)
+   - สิทธิ์จริงถูกบังคับในฐานข้อมูล: ทุก admin_* RPC ตรวจ public.is_contest_admin() ซ้ำเสมอ
+     หน้านี้ตรวจสิทธิ์ก่อนแสดงผลเพื่อ UX เท่านั้น ถ้าไม่ใช่แอดมินจะออกจากระบบทันทีและไม่เรียกฟังก์ชันจัดการใด ๆ
+   ============================================================ */
+const API={url:'https://vnunuryoqyhuendcvopm.supabase.co',key:'sb_publishable_b1hWWFjCnv6syQS0rzt7LA_YFQ7kKRl'};
+const SK='kds_admin_session';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nf=n=>Number(n||0).toLocaleString('th-TH');
+const KT={banana:'ฐานกระทงใบตอง',lotus:'กลีบบัว',plate:'พานดอกไม้',lanna:'ฐานกระทงบายศรี',bread:'ฐานกระทงขนมปัง',min:'มินิมอล'};
+const KF={lotus:'บัว',jasmine:'มะลิ',marigold:'ดาวเรือง',rose:'กุหลาบ',orchid:'กล้วยไม้',white:'ขาว',plumeria:'ลีลาวดีขาว-เหลือง',plumeriaP:'ลีลาวดีชมพู',mix:'ผสม'};
+const KC={gold:'เทียนทอง',ivory:'เทียนงาช้าง',red:'เทียนแดง',ornate:'เทียนประดับ'};
+
+/* ---------- views / toast / dialog ---------- */
+function show(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id===id));$('#out').hidden=!(S&&id!=='vLogin');$('#who').textContent=(S&&id==='vApp')?S.email:''}
+let tt;function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),3200)}
+function ask(title,html,okText,danger){return new Promise(res=>{const d=$('#dAsk');$('#aT').textContent=title;$('#aB').innerHTML=html;const y=$('#aYes');y.textContent=okText||'ยืนยัน';y.className='btn'+(danger?' danger':'');
+  const done=v=>{d.close();y.onclick=n.onclick=null;d.onclose=null;res(v)};const n=$('#aNo');y.onclick=()=>done(true);n.onclick=()=>done(false);d.onclose=()=>{y.onclick=n.onclick=null;res(false)};d.showModal()})}
+
+/* ---------- session (เก็บเฉพาะในแท็บนี้ ปิดแท็บแล้วหาย) ---------- */
+let S=null,refreshing=null;
+const saveS=()=>{try{S?sessionStorage.setItem(SK,JSON.stringify(S)):sessionStorage.removeItem(SK)}catch(e){}};
+const loadS=()=>{try{const s=JSON.parse(sessionStorage.getItem(SK)||'null');return s&&s.access_token&&s.refresh_token?s:null}catch(e){return null}};
+async function authPost(path,body,token){
+  const h={apikey:API.key,'Content-Type':'application/json'};if(token)h.Authorization='Bearer '+token;
+  const r=await fetch(API.url+path,{method:'POST',headers:h,body:JSON.stringify(body||{})});
+  let j=null;try{j=await r.json()}catch(e){}return{ok:r.ok,status:r.status,j}}
+function adopt(j,email){S={access_token:j.access_token,refresh_token:j.refresh_token,expires_at:j.expires_at||Math.floor(Date.now()/1000)+(j.expires_in||3600),email:(j.user&&j.user.email)||email||(S&&S.email)||''};saveS()}
+function refreshOnce(){if(!refreshing)refreshing=(async()=>{try{if(!S)throw new Error('session_expired');const r=await authPost('/auth/v1/token?grant_type=refresh_token',{refresh_token:S.refresh_token});if(!r.ok||!r.j||!r.j.access_token)throw new Error('session_expired');adopt(r.j)}finally{refreshing=null}})();return refreshing}
+async function signOut(){const t=S&&S.access_token;S=null;saveS();clearApp();if(t){try{await authPost('/auth/v1/logout?scope=local',{},t)}catch(e){}}}
+function clearApp(){['#klist','#sstats','#vstrip','#ires','#clist','#cdlist'].forEach(s=>$(s).innerHTML='');$('#ires').hidden=true;$('#icodes').value='';$('#kq').value='';$('#iprev').textContent='ยังไม่มีรหัสให้ตรวจ';$('#iimp').disabled=true;$('#ifile').value='';C.items=[];C.cat='';$('#ccat').value='';$('#cdel').hidden=true;if($('#dC').open)$('#dC').close()}
+
+/* ---------- RPC (แนบ JWT ของผู้ใช้; publishable key อยู่ใน apikey) ---------- */
+async function rpc(name,args,retry=true){
+  if(!S)throw new Error('session_expired');
+  if(S.expires_at-60<Date.now()/1000)await refreshOnce();
+  const r=await fetch(API.url+'/rest/v1/rpc/'+name,{method:'POST',headers:{apikey:API.key,Authorization:'Bearer '+S.access_token,'Content-Type':'application/json'},body:JSON.stringify(args||{})});
+  let j=null;try{j=await r.json()}catch(e){}
+  if(r.status===401&&retry){await refreshOnce();return rpc(name,args,false)}
+  if(!r.ok){const e=new Error((j&&j.message)||('HTTP '+r.status));e.status=r.status;throw e}
+  return j}
+/* ฟังก์ชันจัดการทั้งหมดเรียกผ่านตัวนี้: ถ้าฐานข้อมูลตอบ forbidden = ไม่ใช่แอดมิน (หรือถูกถอนสิทธิ์กลางคัน) → ออกจากระบบทันที */
+async function adm(name,args){
+  const j=await rpc(name,args);
+  if(j&&j.ok===false&&j.error==='forbidden'){await signOut();show('vDenied');const e=new Error('forbidden');e.handled=true;throw e}
+  return j}
+function netMsg(e){
+  if(e&&(e.message==='session_expired')){return 'เซสชันหมดอายุ กรุณาเข้าสู่ระบบอีกครั้ง'}
+  if(e&&e.handled)return '';
+  if(e instanceof TypeError)return 'เชื่อมต่อเซิร์ฟเวอร์ไม่ได้ ตรวจสอบอินเทอร์เน็ตแล้วลองใหม่';
+  return 'เกิดข้อผิดพลาด: '+((e&&e.message)||'ไม่ทราบสาเหตุ')}
+function onFail(e,el){
+  if(e&&e.message==='session_expired'){S=null;saveS();clearApp();show('vLogin');$('#loginMsg').textContent='เซสชันหมดอายุ กรุณาเข้าสู่ระบบอีกครั้ง';return}
+  const m=netMsg(e);if(m&&el)el.textContent=m;else if(m)toast(m)}
+
+/* ---------- login ---------- */
+$('#fLogin').addEventListener('submit',async ev=>{
+  ev.preventDefault();const em=$('#em').value.trim(),pw=$('#pw').value,msg=$('#loginMsg'),b=$('#loginBtn');msg.textContent='';
+  if(!em||!pw){msg.textContent='กรุณากรอกอีเมลและรหัสผ่าน';return}
+  b.disabled=true;b.textContent='กำลังเข้าสู่ระบบ…';
+  try{
+    const r=await authPost('/auth/v1/token?grant_type=password',{email:em,password:pw});
+    if(!r.ok||!r.j||!r.j.access_token){
+      const c=(r.j&&(r.j.error_code||r.j.code))||'';
+      msg.textContent=r.status===429||/rate/i.test(c)?'พยายามเข้าสู่ระบบบ่อยเกินไป กรุณารอสักครู่แล้วลองใหม่'
+        :/not_confirmed/i.test(c)?'บัญชียังไม่ได้ยืนยัน กรุณาติดต่อผู้ดูแลระบบ'
+        :'อีเมลหรือรหัสผ่านไม่ถูกต้อง';
+      return}
+    adopt(r.j,em);$('#pw').value='';await enter();
+  }catch(e){msg.textContent=netMsg(e)}
+  finally{b.disabled=false;b.textContent='เข้าสู่ระบบ'}
+});
+$('#out').addEventListener('click',async()=>{await signOut();show('vLogin');$('#loginMsg').textContent='';toast('ออกจากระบบแล้ว')});
+$('#denyBack').addEventListener('click',()=>{show('vLogin')});
+
+/* ---------- ตรวจสิทธิ์จาก public.contest_admins (ผ่าน is_contest_admin) ก่อนเข้าหน้าจัดการ ---------- */
+async function enter(){
+  show('vCheck');$('#checkMsg').textContent='';
+  let ok;
+  try{ok=await rpc('is_contest_admin',{})}
+  catch(e){
+    if(e&&e.message==='session_expired'){onFail(e);return}
+    if(e&&(e.status===401||e.status===403)){await signOut();show('vDenied');return}
+    $('#checkMsg').innerHTML=esc(netMsg(e))+'<br><button class="mini" id="retry" type="button" style="margin-top:10px">ลองใหม่</button>';
+    $('#retry').onclick=enter;return}
+  if(ok!==true){await signOut();show('vDenied');return}      // ล็อกอินแล้วแต่ไม่ใช่แอดมิน: ไม่โหลดข้อมูลใด ๆ
+  show('vApp');tab('K');loadStrip();loadK(true)}
+
+/* ---------- แถบสถานะโหวต + สวิตช์เปิด/ปิดโหวต ----------
+   อ่านสถานะจาก get_contest_config (ฐานข้อมูล) · สั่งเปิด/ปิดผ่าน admin_set_voting_open (ตรวจ is_contest_admin ในฐานข้อมูล)
+   ตัวบังคับจริงคือ cast_vote เดิม ซึ่งตรวจ contest_settings.voting_open ทุกครั้งที่มีการโหวต · สวิตช์เดียวใช้กับทั้ง 3 เวที */
+let VO=null;
+async function loadStrip(){
+  try{const c=await rpc('get_contest_config',{});VO=!!c&&c.voting_open===true;
+    $('#vstrip').innerHTML=`<span>ระบบโหวต: <b>${VO?'เปิดรับโหวต':'ปิดรับโหวต'}</b></span><span>ใช้ PIN: <b>${c&&c.require_pin?'ใช่':'ไม่'}</b></span><button class="mini" id="vtog" type="button">${VO?'ปิดรับโหวต':'เปิดรับโหวต'}</button>`}
+  catch(e){VO=null;$('#vstrip').innerHTML=''}}
+$('#vstrip').addEventListener('click',async e=>{
+  const b=e.target.closest('#vtog');if(!b||VO===null)return;const want=!VO;
+  const yes=await ask(want?'เปิดรับโหวต?':'ปิดรับโหวต?',
+    want?'<p>นักเรียนที่ยืนยันรหัสแล้วจะโหวตได้ทันที (หนึ่งรหัสต่อหนึ่งเวที) สวิตช์นี้ใช้กับ <b>ทั้ง 3 เวที</b></p>'
+        :'<p>ทุกเวทีจะ<b>หยุดรับโหวตทันที</b> คะแนนที่โหวตไปแล้วยังอยู่ครบ และเปิดใหม่ได้ภายหลัง</p>',
+    want?'เปิดรับโหวต':'ปิดรับโหวต');
+  if(!yes)return;b.disabled=true;
+  try{
+    const j=await adm('admin_set_voting_open',{p_open:want});
+    if(!(j&&j.ok)){toast(j&&j.error==='not_found'?'ไม่พบแถวตั้งค่าโหวตในฐานข้อมูล':'สั่งไม่สำเร็จ')}
+    await loadStrip();                                   /* อ่านสถานะจริงจากฐานข้อมูลกลับมาแสดง ไม่เชื่อค่าที่คาดไว้ */
+    if(j&&j.ok)toast(VO===want?(want?'เปิดรับโหวตแล้ว':'ปิดรับโหวตแล้ว'):'สถานะในฐานข้อมูลไม่ตรงกับที่สั่ง กรุณารีเฟรชหน้า')}
+  catch(err){
+    if(err&&(err.status===404||/PGRST202|Could not find/i.test(err.message||'')))toast('ยังไม่ได้ติดตั้งฟังก์ชันสวิตช์ในฐานข้อมูล (รัน royal_contest_voting_switch.sql ก่อน)');
+    else onFail(err)}
+  finally{b.disabled=false}});
+
+/* ---------- tabs ---------- */
+function tab(k){['K','S','C'].forEach(x=>{$('#tab'+x).setAttribute('aria-selected',x===k);$('#p'+x).hidden=x!==k});if(k==='S')loadStats();if(k==='C')loadC()}
+$('#tabK').onclick=()=>tab('K');$('#tabS').onclick=()=>tab('S');$('#tabC').onclick=()=>tab('C');
+
+/* ---------- กระทง ---------- */
+const K={page:0,size:25,q:'',matched:0,total:0,items:[],busy:false};
+const fmt=t=>{try{return new Date(t).toLocaleString('th-TH',{timeZone:'Asia/Bangkok',dateStyle:'medium',timeStyle:'short'})}catch(e){return String(t||'')}};
+const dsg=d=>{d=d||{};return[KT[d.t]||d.t,KF[d.f]||d.f,KC[d.c]||d.c].filter(Boolean)};
+async function loadK(reset){
+  if(K.busy)return;K.busy=true;if(reset)K.page=0;const msg=$('#kmsg');msg.textContent='';
+  try{
+    const j=await adm('admin_list_krathongs',{p_limit:K.size,p_offset:K.page*K.size,p_search:K.q||null});
+    if(!j||j.ok!==true){msg.textContent='โหลดรายการไม่สำเร็จ';return}
+    K.total=j.total;K.matched=j.matched;K.items=j.items||[];
+    if(!K.items.length&&K.page>0){K.page=Math.max(0,Math.ceil(K.matched/K.size)-1);K.busy=false;return loadK()}
+    renderK();
+  }catch(e){onFail(e,msg)}finally{K.busy=false}}
+function renderK(){
+  const pages=Math.max(1,Math.ceil(K.matched/K.size));
+  $('#kinfo').textContent=K.q?`พบ ${nf(K.matched)} จากทั้งหมด ${nf(K.total)} กระทง`:`กระทงทั้งหมด ${nf(K.total)} รายการ (เรียงจากล่าสุด)`;
+  $('#klist').innerHTML=K.items.length?K.items.map(k=>`<article class="kr"><div class="kh"><b>${esc(k.owner)}</b><time datetime="${esc(k.created_at)}">${esc(fmt(k.created_at))}</time></div><p class="kw">${esc(k.wish)}</p><div class="chips">${dsg(k.design).map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div><div class="kf"><code>${esc(k.id)}</code><button class="mini danger" type="button" data-del="${esc(k.id)}">ลบ</button></div></article>`).join(''):`<div class="empty">${K.q?'ไม่พบกระทงที่ตรงกับคำค้น':'ยังไม่มีกระทง'}</div>`;
+  $('#kpager').hidden=K.matched<=K.size;$('#kpg').textContent=`หน้า ${K.page+1} / ${pages}`;$('#kprev').disabled=K.page<=0;$('#knext').disabled=K.page>=pages-1}
+$('#kprev').onclick=()=>{if(K.page>0){K.page--;loadK()}};
+$('#knext').onclick=()=>{K.page++;loadK()};
+$('#kreload').onclick=()=>loadK();
+let qt;$('#kq').addEventListener('input',e=>{clearTimeout(qt);qt=setTimeout(()=>{K.q=e.target.value.trim();loadK(true)},350)});
+$('#klist').addEventListener('click',async e=>{
+  const b=e.target.closest('[data-del]');if(!b)return;const k=K.items.find(x=>x.id===b.dataset.del);if(!k)return;
+  const yes=await ask('ลบกระทงนี้?',`<p style="margin-bottom:8px">การลบเป็นแบบ <b>ถาวร</b> กู้คืนไม่ได้ และกระทงจะหายจากหน้าเว็บหลัก</p><div class="kr"><div class="kh"><b>${esc(k.owner)}</b></div><p class="kw">${esc(k.wish)}</p></div>`,'ลบถาวร',true);
+  if(!yes)return;b.disabled=true;
+  try{const j=await adm('admin_delete_krathong',{p_id:k.id});
+    if(j&&j.ok){toast('ลบกระทงแล้ว');loadK()}
+    else{toast(j&&j.error==='not_found'?'ไม่พบกระทงนี้แล้ว (อาจถูกลบไปก่อนหน้า)':'ลบไม่สำเร็จ');loadK()}}
+  catch(err){onFail(err)}finally{b.disabled=false}});
+
+/* ---------- นำเข้ารหัสนักเรียน ---------- */
+async function loadStats(){
+  try{const j=await adm('admin_students_summary',{});if(!j||j.ok!==true)return;
+    $('#sstats').innerHTML=[['ทั้งหมด',j.total],['ใช้งานได้',j.active],['ปิดใช้งาน',j.inactive],['ตั้ง PIN แล้ว',j.with_pin],['เคยโหวต',j.voted]].map(([l,n])=>`<div class="stat"><b>${nf(n)}</b><span>${l}</span></div>`).join('')}
+  catch(e){onFail(e)}}
+const HEAD=new Set(['student_code','studentcode','student code','รหัสนักเรียน','รหัส']);
+const okCode=c=>{const n=[...c].length;return n>=3&&n<=32&&!/[\s\x00-\x1f\x7f]/.test(c)};
+function analyze(txt){
+  const lines=String(txt).replace(/^\uFEFF/,'').split(/\r?\n/);const seen=new Set(),valid=[],bad=[];let total=0,first=true,badN=0;
+  for(const ln of lines){
+    let c=ln.split(/[,;\t]/)[0].trim().replace(/^["']+|["']+$/g,'').trim();if(!c)continue;
+    if(first){first=false;if(HEAD.has(c.toLowerCase()))continue}
+    total++;c=c.toUpperCase();
+    if(!okCode(c)){badN++;if(bad.length<200)bad.push(c);continue}
+    if(!seen.has(c)){seen.add(c);valid.push(c)}}
+  return{total,valid,bad,badN,dup:total-badN-valid.length}}
+let AN={valid:[],bad:[]};
+function prev(){
+  AN=analyze($('#icodes').value);const n=AN.valid.length;
+  if(!AN.total){$('#iprev').textContent='ยังไม่มีรหัสให้ตรวจ';$('#iimp').disabled=true;return}
+  $('#iprev').innerHTML=`พบรหัสทั้งหมด <b>${nf(AN.total)}</b> บรรทัด · รหัสที่ใช้ได้ (ไม่ซ้ำ) <b>${nf(n)}</b> รหัส`+(AN.dup>0?` · ซ้ำกันเอง ${nf(AN.dup)}`:'')
+    +(AN.badN?`<div class="warn" style="margin-top:6px">รูปแบบไม่ถูกต้อง ${nf(AN.badN)} รายการ จะไม่ถูกนำเข้า เช่น: ${AN.bad.slice(0,5).map(x=>esc([...x].slice(0,40).join(''))).join(' , ')}</div>`:'');
+  $('#iimp').disabled=n===0||n>20000;if(n>20000)$('#imsg').textContent='นำเข้าได้ครั้งละไม่เกิน 20,000 รหัส'}
+$('#icodes').addEventListener('input',()=>{$('#imsg').textContent='';prev()});
+$('#ifile').addEventListener('change',async e=>{
+  const f=e.target.files&&e.target.files[0];if(!f)return;$('#imsg').textContent='';
+  if(f.size>2*1024*1024){$('#imsg').textContent='ไฟล์ใหญ่เกิน 2 MB';e.target.value='';return}
+  try{$('#icodes').value=await f.text();prev()}catch(err){$('#imsg').textContent='อ่านไฟล์ไม่สำเร็จ'}});
+$('#iclear').onclick=()=>{$('#icodes').value='';$('#ifile').value='';$('#imsg').textContent='';$('#ires').hidden=true;prev()};
+$('#iimp').onclick=async()=>{
+  const list=AN.valid.slice();if(!list.length)return;const msg=$('#imsg');msg.textContent='';
+  const yes=await ask('นำเข้ารหัสนักเรียน?',`<p>จะนำเข้า <b>${nf(list.length)}</b> รหัส (เพิ่มเฉพาะรหัสใหม่ ไม่แก้รหัสที่มีอยู่)</p><p style="margin-top:8px;opacity:.8">การนำเข้า <b>ไม่เปิดระบบโหวต</b></p>`,'นำเข้า');
+  if(!yes)return;
+  const b=$('#iimp');b.disabled=true;const agg={inserted:0,already:0,invalid:0,sample:[]};let sent=0;
+  try{
+    for(let i=0;i<list.length;i+=500){
+      const part=list.slice(i,i+500);msg.className='msg ok';msg.textContent=`กำลังนำเข้า… ${nf(sent)} / ${nf(list.length)}`;
+      const j=await adm('admin_import_students',{p_codes:part});
+      if(!j||j.ok!==true)throw new Error(j&&j.error?('นำเข้าไม่สำเร็จ ('+j.error+')'):'นำเข้าไม่สำเร็จ');
+      agg.inserted+=j.inserted;agg.already+=j.already_exist;agg.invalid+=j.invalid_count;if(j.invalid_sample)agg.sample.push(...j.invalid_sample);sent+=part.length}
+    msg.className='msg ok';msg.textContent='นำเข้าเสร็จสิ้น';
+    const r=$('#ires');r.hidden=false;
+    r.innerHTML=`<b>ผลการนำเข้า</b><br>เพิ่มใหม่ <b>${nf(agg.inserted)}</b> รหัส · มีอยู่แล้ว (ไม่แก้ไข) ${nf(agg.already)}`+(agg.invalid?`<br><span class="warn">ฐานข้อมูลปฏิเสธรูปแบบ ${nf(agg.invalid)} รหัส</span>`:'')+(AN.badN?`<br><span class="warn">ข้ามเพราะรูปแบบไม่ถูกต้อง ${nf(AN.badN)} รายการ</span>`:'');
+    $('#icodes').value='';$('#ifile').value='';prev();loadStats();
+  }catch(e){msg.className='msg';if(e&&e.handled)return;if(e&&e.message==='session_expired'){onFail(e);return}msg.textContent=(e instanceof TypeError?netMsg(e):e.message)+(sent?` — นำเข้าไปแล้ว ${nf(sent)} รหัสก่อนหน้านี้ (ทำซ้ำได้อย่างปลอดภัย)`:'')}
+  finally{b.disabled=!AN.valid.length}};
+
+/* ---------- ROYAL CONTEST (ผู้เข้าประกวด) ----------
+   ข้อมูลอยู่ในตาราง contestants เดิม ผ่าน RPC admin_list/save/delete/restore_contestant (ตรวจ is_contest_admin ในฐานข้อมูล)
+   รูปเก็บใน Supabase Storage bucket "contestant-photos" (อ่านสาธิต / เขียนได้เฉพาะแอดมิน) — ไม่แตะ votes / contest_settings */
+const CAT={nn:'ประเภท NN',nt:'ประเภท NT',tk:'ประเภท TK'};   /* ← รหัสประเภทตามฐานข้อมูล: แก้ชื่อที่แสดงได้ที่นี่ที่เดียว */
+const PUB=API.url+'/storage/v1/object/public/contestant-photos/';
+const OBJ=API.url+'/storage/v1/object/contestant-photos/';
+const CERR={invalid_category:'ประเภทไม่ถูกต้อง',invalid_number:'หมายเลขต้องเป็นจำนวนเต็ม 1–99',invalid_name:'กรุณากรอกชื่อ–นามสกุล',invalid_photo:'ที่อยู่รูปไม่ถูกต้อง',invalid_flag:'ค่าสถานะไม่ถูกต้อง',category_locked:'ย้ายประเภทไม่ได้ เพราะมีคะแนนโหวตแล้ว',is_deleted:'ข้อมูลนี้ถูกลบไปแล้ว',not_found:'ไม่พบข้อมูลนี้แล้ว',invalid_data:'ข้อมูลไม่ถูกต้อง',no_free_number:'ไม่มีหมายเลขว่างในประเภทนี้'};
+const CFLD={name:'ชื่อ–นามสกุล',nickname:'ชื่อเล่น',class_name:'ระดับชั้น/ห้อง'};
+const cerr=j=>j.error==='number_taken'?'หมายเลขนี้ถูกใช้แล้ว'+(j.conflict_name?' (โดย '+j.conflict_name+')':'')
+  :j.error==='too_long'?(CFLD[j.field]||j.field)+' ยาวเกินกำหนด':(CERR[j.error]||('ไม่สำเร็จ ('+j.error+')'));
+const C={items:[],cat:'',busy:false,edit:null};
+let ph={mode:'keep'};
+const rid=()=>{const a=new Uint8Array(10);crypto.getRandomValues(a);return 'c'+[...a].map(x=>x.toString(16).padStart(2,'0')).join('')};
+const catOpts=(all)=>(all?'<option value="">ทุกประเภท</option>':'')+Object.keys(CAT).map(k=>`<option value="${k}">${esc(CAT[k])}</option>`).join('');
+$('#ccat').innerHTML=catOpts(true);$('#ccategory').innerHTML=catOpts(false);
+
+async function loadC(){
+  if(C.busy)return;C.busy=true;const msg=$('#cmsg');msg.textContent='';
+  try{const j=await adm('admin_list_contestants',{});
+    if(!j||j.ok!==true){msg.textContent='โหลดรายการไม่สำเร็จ';return}
+    C.items=j.contestants||[];renderC()}
+  catch(e){onFail(e,msg)}finally{C.busy=false}}
+function cardC(c){
+  const del=!!c.deleted_at,src=c.photo_path?PUB+c.photo_path:'';
+  return `<article class="cc${del||!c.is_published?' off':''}"><div class="cph">${src?`<img src="${esc(src)}" alt="" loading="lazy">`:'ไม่มีรูป'}</div><div class="cb">`
+   +`<div class="no">${esc(CAT[c.category]||c.category)} · หมายเลข ${esc(c.number)}</div><b>${esc(c.name)}</b>`
+   +(c.nickname?`<div class="sub">ชื่อเล่น ${esc(c.nickname)}</div>`:'')+(c.class_name?`<div class="sub">${esc(c.class_name)}</div>`:'')
+   +`<div class="chips">${del?'<span class="chip">ถูกลบ</span>':`<span class="chip${c.is_published?' on':''}">${c.is_published?'เผยแพร่แล้ว':'ฉบับร่าง'}</span>`}<span class="chip">โหวต ${nf(c.votes)}</span></div>`
+   +`<div class="cact">`+(del?`<button class="mini" type="button" data-restore="${esc(c.id)}">กู้คืน</button>`
+     :`<button class="mini" type="button" data-edit="${esc(c.id)}">แก้ไข</button><button class="mini" type="button" data-pub="${esc(c.id)}">${c.is_published?'ซ่อน':'เผยแพร่'}</button><button class="mini danger" type="button" data-cdel="${esc(c.id)}">ลบ</button>`)
+   +`</div></div></article>`}
+function renderC(){
+  const act=C.items.filter(c=>!c.deleted_at),del=C.items.filter(c=>c.deleted_at),shown=act.filter(c=>!C.cat||c.category===C.cat);
+  $('#cinfo').textContent=C.cat?`${CAT[C.cat]||C.cat}: ${nf(shown.length)} คน (ทั้งหมด ${nf(act.length)} คน)`:`ผู้เข้าประกวดทั้งหมด ${nf(act.length)} คน`;
+  $('#clist').innerHTML=shown.length?shown.map(cardC).join(''):`<div class="empty" style="grid-column:1/-1">ยังไม่มีผู้เข้าประกวด${C.cat?'ในประเภทนี้':''} — กด “เพิ่มผู้เข้าประกวด”</div>`;
+  const dd=del.filter(c=>!C.cat||c.category===C.cat);
+  $('#cdel').hidden=!dd.length;$('#cdelsum').textContent=`ที่ลบแล้ว (${nf(dd.length)}) — กู้คืนได้ คะแนนเดิมยังอยู่`;$('#cdlist').innerHTML=dd.map(cardC).join('')}
+$('#ccat').onchange=e=>{C.cat=e.target.value;renderC()};
+$('#creload').onclick=()=>loadC();
+
+/* ---- รูป: ย่อในเบราว์เซอร์ก่อนอัปโหลด (ด้านยาวสุด 1000px) ---- */
+function prepImg(file){return new Promise((res,rej)=>{
+  const fr=new FileReader();fr.onerror=()=>rej(new Error('bad_image'));
+  fr.onload=()=>{const url=fr.result,im=new Image();im.onerror=()=>rej(new Error('bad_image'));
+    im.onload=()=>{
+      const k=Math.min(1,1000/Math.max(im.naturalWidth,im.naturalHeight)),w=Math.max(1,Math.round(im.naturalWidth*k)),h=Math.max(1,Math.round(im.naturalHeight*k));
+      const cv=document.createElement('canvas');cv.width=w;cv.height=h;const g=cv.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,w,h);g.drawImage(im,0,0,w,h);
+      cv.toBlob(b=>{
+        if(b&&b.type==='image/webp')return res({blob:b,ext:'webp',url});
+        cv.toBlob(b2=>b2?res({blob:b2,ext:'jpg',url}):rej(new Error('bad_image')),'image/jpeg',.88)},'image/webp',.85)};
+    im.src=url};
+  fr.readAsDataURL(file)})}
+async function storage(method,path,blob){
+  const go=()=>fetch(OBJ+path,{method,headers:Object.assign({apikey:API.key,Authorization:'Bearer '+S.access_token},blob?{'Content-Type':blob.type,'x-upsert':'false'}:{}),body:blob||undefined});
+  if(!S)throw new Error('session_expired');
+  if(S.expires_at-60<Date.now()/1000)await refreshOnce();
+  let r=await go();if(r.status===401){await refreshOnce();r=await go()}
+  return r}
+async function upPhoto(blob,path){
+  const r=await storage('POST',path,blob);
+  if(!r.ok){let j=null;try{j=await r.json()}catch(e){}throw new Error('อัปโหลดรูปไม่สำเร็จ'+(j&&j.message?' ('+j.message+')':''))}}
+const rmPhoto=async path=>{try{await storage('DELETE',path)}catch(e){}};   /* ลบไฟล์เก่า: best-effort */
+function setPrev(src){$('#cprev').innerHTML=src?`<img src="${esc(src)}" alt="ตัวอย่างรูป">`:'ไม่มีรูป';$('#crm').hidden=!src}
+$('#cpick').onclick=()=>$('#cfile').click();
+$('#cfile').addEventListener('change',async e=>{
+  const f=e.target.files&&e.target.files[0];if(!f)return;const m=$('#cm2');m.textContent='';
+  if(!/^image\/(jpeg|png|webp)$/.test(f.type)){m.textContent='รองรับเฉพาะไฟล์ JPG / PNG / WebP';e.target.value='';return}
+  if(f.size>15*1024*1024){m.textContent='ไฟล์ใหญ่เกิน 15 MB';e.target.value='';return}
+  try{const p=await prepImg(f);ph={mode:'new',blob:p.blob,ext:p.ext};setPrev(p.url)}
+  catch(err){m.textContent='อ่านรูปไม่สำเร็จ ลองไฟล์อื่น'}finally{e.target.value=''}});
+$('#crm').onclick=()=>{ph=(C.edit&&C.edit.photo_path)?{mode:'remove'}:{mode:'keep'};setPrev('')};
+
+/* ---- ฟอร์มเพิ่ม/แก้ไข ---- */
+function openC(c){
+  C.edit=c||null;ph={mode:'keep'};$('#cm2').textContent='';$('#cm2').className='msg';
+  $('#cT').textContent=c?'แก้ไขผู้เข้าประกวด':'เพิ่มผู้เข้าประกวด';
+  $('#ccategory').value=c?c.category:(C.cat||Object.keys(CAT)[0]);$('#ccategory').disabled=!!(c&&c.votes>0);
+  $('#cnum').value=c?c.number:'';$('#cnum').placeholder=c?'':'เว้นว่าง = ระบบเลือกเลขว่างให้';
+  $('#cname').value=c?c.name:'';$('#cnick').value=c&&c.nickname||'';$('#ccls').value=c&&c.class_name||'';
+  $('#cpub').checked=c?!!c.is_published:true;setPrev(c&&c.photo_path?PUB+c.photo_path:'');
+  $('#dC').showModal()}
+$('#cadd').onclick=()=>openC(null);
+$('#ccancel').onclick=()=>$('#dC').close();
+$('#fC').addEventListener('submit',async ev=>{
+  ev.preventDefault();const m=$('#cm2'),b=$('#csave');m.className='msg';m.textContent='';
+  const name=$('#cname').value.trim(),numS=$('#cnum').value.trim(),edit=C.edit;
+  if(!name){m.textContent='กรุณากรอกชื่อ–นามสกุล';return}
+  let num=null;if(numS!==''){num=Number(numS);if(!Number.isInteger(num)||num<1||num>99){m.textContent='หมายเลขต้องเป็นจำนวนเต็ม 1–99';return}}
+  else if(edit){m.textContent='กรุณากรอกหมายเลขประกวด';return}
+  b.disabled=true;b.textContent='กำลังบันทึก…';let up=null;
+  try{
+    const data={category:$('#ccategory').value,name,nickname:$('#cnick').value.trim(),class_name:$('#ccls').value.trim(),is_published:$('#cpub').checked};
+    if(num!==null)data.number=num;
+    if(ph.mode==='new'){up='photos/'+rid()+'.'+ph.ext;await upPhoto(ph.blob,up);data.photo_path=up}
+    else if(ph.mode==='remove')data.photo_path=null;
+    const j=await adm('admin_save_contestant',{p_id:edit?edit.id:null,p_data:data});
+    if(!j||j.ok!==true){if(up)rmPhoto(up);m.textContent=j&&j.error?cerr(j):'บันทึกไม่สำเร็จ';return}
+    if(edit&&edit.photo_path&&(ph.mode==='new'||ph.mode==='remove'))rmPhoto(edit.photo_path);
+    $('#dC').close();toast(edit?'บันทึกการแก้ไขแล้ว':'เพิ่มผู้เข้าประกวดแล้ว');loadC();
+  }catch(e){
+    if(e&&(e.handled||e.message==='session_expired')){$('#dC').close();onFail(e);return}
+    m.textContent=e instanceof TypeError?netMsg(e):e.message}
+  finally{b.disabled=false;b.textContent='บันทึก'}});
+
+/* ---- ปุ่มบนการ์ด: แก้ไข / เผยแพร่-ซ่อน / ลบ / กู้คืน ---- */
+const cById=id=>C.items.find(x=>String(x.id)===String(id));
+async function cAct(fn,okMsg){try{const j=await fn();if(j&&j.ok){toast(okMsg);}else toast(j&&j.error?cerr(j):'ไม่สำเร็จ');loadC()}catch(e){onFail(e)}}
+$('#pC').addEventListener('click',async e=>{
+  const t=e.target.closest('[data-edit],[data-pub],[data-cdel],[data-restore]');if(!t)return;
+  const id=t.dataset.edit||t.dataset.pub||t.dataset.cdel||t.dataset.restore,c=cById(id);if(!c)return;
+  if(t.dataset.edit!==undefined)return openC(c);
+  if(t.dataset.pub!==undefined){t.disabled=true;return cAct(()=>adm('admin_save_contestant',{p_id:c.id,p_data:{is_published:!c.is_published}}),c.is_published?'ซ่อนจากหน้าเว็บแล้ว':'เผยแพร่แล้ว')}
+  if(t.dataset.cdel!==undefined){
+    const yes=await ask('ลบผู้เข้าประกวดนี้?',`<p style="margin-bottom:8px">จะ<b>ซ่อนจากทุกหน้าและหยุดรับโหวต</b> แต่ข้อมูลและคะแนนเดิม (${nf(c.votes)} โหวต) ยังเก็บไว้ในฐานข้อมูล กู้คืนได้จากรายการ “ที่ลบแล้ว”</p><div class="kr"><b>${esc(c.name)}</b><div class="sub">${esc(CAT[c.category]||c.category)} · หมายเลข ${esc(c.number)}</div></div>`,'ลบ',true);
+    if(!yes)return;t.disabled=true;return cAct(()=>adm('admin_delete_contestant',{p_id:c.id}),'ลบแล้ว (กู้คืนได้)')}
+  if(t.dataset.restore!==undefined){t.disabled=true;return cAct(()=>adm('admin_restore_contestant',{p_id:c.id}),'กู้คืนแล้ว — กลับมาเป็นฉบับร่าง กด “เผยแพร่” เมื่อพร้อม')}});
+
+/* ---------- เริ่มต้น ---------- */
+(async function boot(){
+  S=loadS();
+  if(!S){show('vLogin');return}
+  try{await enter()}catch(e){S=null;saveS();show('vLogin')}
+})();
+/* กลับมาจากแคชของเบราว์เซอร์ (ปุ่มย้อนกลับ) ให้ตรวจใหม่ ไม่ปล่อยข้อมูลค้างหน้าจอหลังออกจากระบบ */
+window.addEventListener('pageshow',e=>{if(e.persisted){if(!S){clearApp();show('vLogin')}}});
+</script>
+</body>
+</html>
